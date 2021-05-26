@@ -16,4 +16,6 @@ class HexPrism: public Solid {
 
     void SetPosition(const Vector3D Pos) {Position = Pos; Orientation = 0;};
 
+    void Rotate(const double rotation) {Orientation += rotation;};
+
 };

@@ -5,6 +5,8 @@
 #include <cmath>
 #include <unistd.h>
 #define PI 3.14159265358979323846
+#define FLIGHT_INC 2
+#define ROTATE_INC 30
 
 
 
@@ -81,13 +83,16 @@ void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &Path
 
 void Drone::VerticalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
 
-  double T[3] = {0,0,10};
+  double T[3] = {0,0,FLIGHT_INC};
   Vector3D trans(T);
   CalcDroneGlobalCoords();
 
-  for(int i = 0; i < distance; ++i){
+  for(int i = 0; i < distance; i+=FLIGHT_INC){
+    Rotor[0].Rotate(ROTATE_INC);
+    Rotor[1].Rotate(-ROTATE_INC);
+    Rotor[2].Rotate(ROTATE_INC);
+    Rotor[3].Rotate(-ROTATE_INC);
     Position = Position + trans;
-/*     std::cout << Position << std::endl; */
     CalcDroneGlobalCoords();
     usleep(100000);
     Lacze.Rysuj();
@@ -123,14 +128,14 @@ void Drone::SetDronePosition(double Pos_x, double Pos_y, double Pos_z){
 
   Vector3D VBody(TBody), VR0(TR0), VR1(TR1), VR2(TR2), VR3(TR3), VDrone(TDrone);
 
-  Body.SetPosition(VBody);
+/*   Body.SetPosition(VBody);
   Rotor[0].SetPosition(VR0);
   Rotor[1].SetPosition(VR1);
   Rotor[2].SetPosition(VR2);
-  Rotor[3].SetPosition(VR3);
+  Rotor[3].SetPosition(VR3); */
+
 
   Position = VDrone;
+  Orientation = 0;
 
-  
-  
 }
