@@ -80,11 +80,3 @@ cmath
 unistd.h
 -
 
-/home/jakub/Documents/zad5_1-jszymanski36/src/hexprism.cpp
-../inc/hexprism.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/hexprism.hh
-../inc/matrix3x3.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/matrix3x3.hh
-fstream
--
-

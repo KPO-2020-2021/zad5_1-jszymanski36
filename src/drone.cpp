@@ -6,8 +6,16 @@
 #include <unistd.h>
 #define PI 3.14159265358979323846
 #define FLIGHT_INC 2
-#define ROTATE_INC 30
-
+#define ROTOR_ROTATE_INC 30
+#define DRONE_ROTATE_INC 5
+#define BODY_SCALE 10,8,4
+#define ROTOR_SCALE 8,8,2
+#define BODY_POS 0,0,2
+#define ROTOR0_POS 5,4,5
+#define ROTOR1_POS 5,-4,5
+#define ROTOR2_POS -5,4,5
+#define ROTOR3_POS -5,-4,5
+#define DRONE_POS 20,20,0
 
 
 bool Drone::CalcRotorGlobalCoords(const HexPrism &Rotor) const{
@@ -20,7 +28,6 @@ bool Drone::CalcRotorGlobalCoords(const HexPrism &Rotor) const{
   while(local.is_open()){
     for(int i = 0; i < 4; ++i){
       if(!(local >> point)) return 1;
-      point = Rotor.Scale(point);
       point = Rotor.TransformToParentsCoords(point);
       point = TransformToParentsCoords(point);
       global << point;
@@ -42,10 +49,7 @@ bool Drone::CalcBodyGlobalCoords() const{
     for(int i = 0; i < 4; ++i){
       local >> point;
       if( local.eof()) return 1;
-/*       std::cout << Body.Scale_Vector << std::endl; */
-      point = Body.Scale(point);
       point = Body.TransformToParentsCoords(point);
-                  std::cout << point << std::endl;
       point = TransformToParentsCoords(point);
 
       global << point;
@@ -69,7 +73,7 @@ Vector3D Drone::TransformToParentsCoords(const Vector3D &Point) const{
 
 void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &PathPoints){
 
-  double T_height[SIZE] = {0,0,20};
+  double T_height[SIZE] = {0,0,50};
   double radians = angle * PI/180;
   double T_flight[SIZE] = {cos(radians)*distance, sin(radians)*distance, 0};
   
@@ -83,16 +87,60 @@ void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &Path
 
 void Drone::VerticalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
 
-  double T[3] = {0,0,FLIGHT_INC};
+  CalcDroneGlobalCoords();
+  double inc;
+  if(distance > 0){
+    inc = FLIGHT_INC;
+  } else {
+    inc = -FLIGHT_INC;
+  }
+  double T[3] = {0,0,inc};
+  Vector3D trans(T);
+
+  for(int i = 0; i < abs(distance); i+=FLIGHT_INC){
+    
+    Rotor[0].Rotate(ROTOR_ROTATE_INC);
+    Rotor[1].Rotate(-ROTOR_ROTATE_INC);
+    Rotor[2].Rotate(ROTOR_ROTATE_INC);
+    Rotor[3].Rotate(-ROTOR_ROTATE_INC);
+    Position = Position + trans;
+    CalcDroneGlobalCoords();
+    usleep(100000);
+    Lacze.Rysuj();
+  }
+}
+
+void Drone::HorizontalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
+
+  double radians = Orientation * PI/180;
+  double x_inc = cos(radians) * FLIGHT_INC;
+  double y_inc = sin(radians) * FLIGHT_INC;
+  double T[3] = {x_inc, y_inc,0};
   Vector3D trans(T);
   CalcDroneGlobalCoords();
 
   for(int i = 0; i < distance; i+=FLIGHT_INC){
-    Rotor[0].Rotate(ROTATE_INC);
-    Rotor[1].Rotate(-ROTATE_INC);
-    Rotor[2].Rotate(ROTATE_INC);
-    Rotor[3].Rotate(-ROTATE_INC);
+    Rotor[0].Rotate(ROTOR_ROTATE_INC);
+    Rotor[1].Rotate(-ROTOR_ROTATE_INC);
+    Rotor[2].Rotate(ROTOR_ROTATE_INC);
+    Rotor[3].Rotate(-ROTOR_ROTATE_INC);
     Position = Position + trans;
+    CalcDroneGlobalCoords();
+    usleep(100000);
+    Lacze.Rysuj();
+  }
+}
+
+void Drone::Rotate(double degrees, PzG::LaczeDoGNUPlota &Lacze){
+
+  CalcDroneGlobalCoords();
+
+  for(int i = 0; i < degrees; i+=DRONE_ROTATE_INC){
+    Rotor[0].Rotate(ROTOR_ROTATE_INC);
+    Rotor[1].Rotate(-ROTOR_ROTATE_INC);
+    Rotor[2].Rotate(ROTOR_ROTATE_INC);
+    Rotor[3].Rotate(-ROTOR_ROTATE_INC);
+    Orientation += DRONE_ROTATE_INC;
     CalcDroneGlobalCoords();
     usleep(100000);
     Lacze.Rysuj();
@@ -117,25 +165,29 @@ void Drone::SetCoordFiles(const std::string filenames[10]){
   Rotor[3].SetFileNames(filenames[8], filenames[9]);
 }
 
-void Drone::SetDronePosition(double Pos_x, double Pos_y, double Pos_z){
+void Drone::Initiate(const std::string FileNames[2]){
 
-  double TBody[SIZE] = {0,0,2};
-  double TR0[SIZE] = {5,4,5};
-  double TR1[SIZE] = {5,-4,5};
-  double TR2[SIZE] = {-5,4,5};
-  double TR3[SIZE] = {-5,-4,5};
-  double TDrone[SIZE] = {Pos_x, Pos_y, Pos_z};
+  double TBody[SIZE] = {BODY_POS};
+  double TR0[SIZE] = {ROTOR0_POS};
+  double TR1[SIZE] = {ROTOR1_POS};
+  double TR2[SIZE] = {ROTOR2_POS};
+  double TR3[SIZE] = {ROTOR3_POS};
+
+  double TDrone[SIZE] = {DRONE_POS};
 
   Vector3D VBody(TBody), VR0(TR0), VR1(TR1), VR2(TR2), VR3(TR3), VDrone(TDrone);
-
-/*   Body.SetPosition(VBody);
-  Rotor[0].SetPosition(VR0);
-  Rotor[1].SetPosition(VR1);
-  Rotor[2].SetPosition(VR2);
-  Rotor[3].SetPosition(VR3); */
-
 
   Position = VDrone;
   Orientation = 0;
 
+  Body.SetPosition(VBody);
+  Rotor[0].SetPosition(VR0);
+  Rotor[1].SetPosition(VR1);
+  Rotor[2].SetPosition(VR2);
+  Rotor[3].SetPosition(VR3);
+
+  Body.Initiate(FileNames[0], BODY_SCALE);
+  for(int i=0; i<4; i++){
+    Rotor[i].Initiate(FileNames[1], ROTOR_SCALE);
+  }
 }

@@ -16,9 +16,7 @@ class Solid {
 
   public:
 
-    
-
-    Solid() {double i[SIZE] = {1,1,1}; Scale_Vector = Vector3D(i);};
+    void SetScale(double x, double y, double z) {Scale_Vector[0] = x; Scale_Vector[1] = y; Scale_Vector[2] = z;};
 
     Vector3D Scale (const Vector3D &Point) const{return Scale_Vector * Point;};
 

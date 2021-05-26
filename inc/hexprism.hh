@@ -18,4 +18,6 @@ class HexPrism: public Solid {
 
     void Rotate(const double rotation) {Orientation += rotation;};
 
+    bool Initiate(std::string TemplateFile, double scale_x, double scale_y, double scale_z);
+
 };

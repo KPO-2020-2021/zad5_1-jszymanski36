@@ -30,17 +30,32 @@
 #define PLIK_WLASCIWY__DRON1_ROTOR3  "../datasets/PlikWlasciwy_Dron1_Rotor3.dat"
 #define PLIK_WLASCIWY__DRON1_ROTOR4  "../datasets/PlikWlasciwy_Dron1_Rotor4.dat"
 
+#define PLIK_TRASY_PRZELOTU "../datasets/trasa_przelotu.dat"
 
+#define PLIK_WZORCOWEGO_SZESCIANU       "../datasets/szescian.dat"
+#define PLIK_WZORCOWEGO_GRANIASTOSLUPA6 "../datasets/graniastoslup6.dat"
+
+bool WritePathToFile(std::vector<Vector3D> PathPoints, std::string FileName){
+       std::ofstream file(FileName);
+
+       if(!file.is_open()) return 0;
+       file << PathPoints[0];
+       file << PathPoints[1];
+       file << PathPoints[2];
+       file << PathPoints[3];
+       return 1;
+}
 
 int main()
 {
   PzG::LaczeDoGNUPlota  Lacze;
-
+  std::vector<Vector3D> Path;
   Drone drone;
 
-  const std::string filenames[10] = {PLIK_ROBOCZY__DRON1_KORPUS, PLIK_WLASCIWY__DRON1_KORPUS, PLIK_ROBOCZY__DRON1_ROTOR1, PLIK_WLASCIWY__DRON1_ROTOR1, PLIK_ROBOCZY__DRON1_ROTOR2, PLIK_WLASCIWY__DRON1_ROTOR2, PLIK_ROBOCZY__DRON1_ROTOR3, PLIK_WLASCIWY__DRON1_ROTOR3, PLIK_ROBOCZY__DRON1_ROTOR4, PLIK_WLASCIWY__DRON1_ROTOR4};
-  drone.SetCoordFiles(filenames);
-  drone.SetDronePosition(20,20,0);
+  const std::string TemplateFileNames[2] = {PLIK_WZORCOWEGO_SZESCIANU, PLIK_WZORCOWEGO_GRANIASTOSLUPA6};
+  const std::string FileNames[10] = {PLIK_ROBOCZY__DRON1_KORPUS, PLIK_WLASCIWY__DRON1_KORPUS, PLIK_ROBOCZY__DRON1_ROTOR1, PLIK_WLASCIWY__DRON1_ROTOR1, PLIK_ROBOCZY__DRON1_ROTOR2, PLIK_WLASCIWY__DRON1_ROTOR2, PLIK_ROBOCZY__DRON1_ROTOR3, PLIK_WLASCIWY__DRON1_ROTOR3, PLIK_ROBOCZY__DRON1_ROTOR4, PLIK_WLASCIWY__DRON1_ROTOR4};
+  drone.SetCoordFiles(FileNames);
+  drone.Initiate(TemplateFileNames);
   drone.CalcDroneGlobalCoords();
 
 
@@ -62,7 +77,15 @@ int main()
 
   Lacze.UstawRotacjeXZ(64,65); // Tutaj ustawiany jest widok
 
-/*   if (!PrzemiescDrona(0,20,20,0)) return 0; */
+         Lacze.Rysuj();
+
+
+  std::cout << "Nacisnij ENTER, aby zaplanować ścieżkę" << std::flush;
+  std::cin.ignore(10000,'\n');
+  drone.PlanPath(30, 100, Path);
+  WritePathToFile(Path, PLIK_TRASY_PRZELOTU);
+    Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+
 
   
 
@@ -72,7 +95,10 @@ int main()
   std::cout << "Nacisnij ENTER, aby polecieć w pizdu " << std::flush;
   std::cin.ignore(10000,'\n');
 
-  drone.VerticalFlight(100, Lacze);
+  drone.VerticalFlight(50, Lacze);
+  drone.Rotate(30, Lacze);
+  drone.HorizontalFlight(100,Lacze);
+  drone.VerticalFlight(-50, Lacze);
 
 
 

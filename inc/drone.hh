@@ -30,11 +30,13 @@ class Drone: HexPrism, Cuboid {
 
     void VerticalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
 
-    bool HorizontalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
+    void Rotate (double degrees, PzG::LaczeDoGNUPlota &Lacze);
+
+    void HorizontalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
 
     bool CalcDroneGlobalCoords() const;
 
     void SetCoordFiles(const std::string filenames[10]);
 
-    void SetDronePosition(double Pos_x, double Pos_y, double Pos_z);
+    void Initiate(const std::string FileNames[2]);
 };

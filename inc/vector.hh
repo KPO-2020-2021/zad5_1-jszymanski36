@@ -128,10 +128,11 @@ Vector<Type, Size>::Vector(Type tmp[Size]) {
 
 template <typename Type, int Size>
 Vector<Type, Size> Vector<Type, Size>::operator + (const Vector<Type, Size> &v) {
+    Vector<Type, Size> result;
     for (int i = 0; i < Size; ++i) {
-        size[i] += v[i];
+        result[i] = size[i] + v[i];
     }
-    return *this;
+    return result;
 }
 
 
