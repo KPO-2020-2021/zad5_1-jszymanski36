@@ -36,7 +36,9 @@ class Drone: HexPrism, Cuboid {
 
     bool CalcDroneGlobalCoords() const;
 
-    void SetCoordFiles(const std::string filenames[10]);
+    void SetCoordFiles(const std::string filenames[7]);
 
-    void Initiate(const std::string FileNames[2]);
+    void Initiate(const std::string FileNames[2], double pos_x, double pos_y, double pos_z);
+
+    void PrintPosition() {std::cout << Position;};
 };

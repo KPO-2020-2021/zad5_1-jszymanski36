@@ -18,11 +18,8 @@
 #include "../inc/matrix3x3.hh"
 #include "../inc/lacze_do_gnuplota.hh"
 
-#define PLIK_ROBOCZY__DRON1_KORPUS  "../datasets/PlikRoboczy_Dron1_Korpus.dat"
-#define PLIK_ROBOCZY__DRON1_ROTOR1  "../datasets/PlikRoboczy_Dron1_Rotor1.dat"
-#define PLIK_ROBOCZY__DRON1_ROTOR2  "../datasets/PlikRoboczy_Dron1_Rotor2.dat"
-#define PLIK_ROBOCZY__DRON1_ROTOR3  "../datasets/PlikRoboczy_Dron1_Rotor3.dat"
-#define PLIK_ROBOCZY__DRON1_ROTOR4  "../datasets/PlikRoboczy_Dron1_Rotor4.dat"
+#define PLIK_ROBOCZY__DRON_KORPUS  "../datasets/PlikRoboczy_Dron_Korpus.dat"
+#define PLIK_ROBOCZY__DRON_ROTOR  "../datasets/PlikRoboczy_Dron_Rotor.dat"
 
 #define PLIK_WLASCIWY__DRON1_KORPUS  "../datasets/PlikWlasciwy_Dron1_Korpus.dat"
 #define PLIK_WLASCIWY__DRON1_ROTOR1  "../datasets/PlikWlasciwy_Dron1_Rotor1.dat"
@@ -30,10 +27,19 @@
 #define PLIK_WLASCIWY__DRON1_ROTOR3  "../datasets/PlikWlasciwy_Dron1_Rotor3.dat"
 #define PLIK_WLASCIWY__DRON1_ROTOR4  "../datasets/PlikWlasciwy_Dron1_Rotor4.dat"
 
+#define PLIK_WLASCIWY__DRON2_KORPUS  "../datasets/PlikWlasciwy_Dron2_Korpus.dat"
+#define PLIK_WLASCIWY__DRON2_ROTOR1  "../datasets/PlikWlasciwy_Dron2_Rotor1.dat"
+#define PLIK_WLASCIWY__DRON2_ROTOR2  "../datasets/PlikWlasciwy_Dron2_Rotor2.dat"
+#define PLIK_WLASCIWY__DRON2_ROTOR3  "../datasets/PlikWlasciwy_Dron2_Rotor3.dat"
+#define PLIK_WLASCIWY__DRON2_ROTOR4  "../datasets/PlikWlasciwy_Dron2_Rotor4.dat"
+
 #define PLIK_TRASY_PRZELOTU "../datasets/trasa_przelotu.dat"
 
 #define PLIK_WZORCOWEGO_SZESCIANU       "../datasets/szescian.dat"
 #define PLIK_WZORCOWEGO_GRANIASTOSLUPA6 "../datasets/graniastoslup6.dat"
+
+#define DRONE1_POS 20,20,0
+#define DRONE2_POS 80,50,0
 
 bool WritePathToFile(std::vector<Vector3D> PathPoints, std::string FileName){
        std::ofstream file(FileName);
@@ -46,17 +52,35 @@ bool WritePathToFile(std::vector<Vector3D> PathPoints, std::string FileName){
        return 1;
 }
 
+void PrintMenu(){
+
+       std::cout << "a - wybierz aktywnego drona" << std::endl;
+       std::cout << "p - zadaj parametry przelotu" << std::endl;
+       std::cout << "m - wyswietl menu" << std::endl << std::endl;
+       std::cout << "k - koniec działania programu" << std::endl;
+}
+
 int main()
 {
   PzG::LaczeDoGNUPlota  Lacze;
   std::vector<Vector3D> Path;
-  Drone drone;
+  Drone drone1, drone2;
+  Drone *dronePtr = &drone1;
+
+  char choice;
+  double angle, distance;
 
   const std::string TemplateFileNames[2] = {PLIK_WZORCOWEGO_SZESCIANU, PLIK_WZORCOWEGO_GRANIASTOSLUPA6};
-  const std::string FileNames[10] = {PLIK_ROBOCZY__DRON1_KORPUS, PLIK_WLASCIWY__DRON1_KORPUS, PLIK_ROBOCZY__DRON1_ROTOR1, PLIK_WLASCIWY__DRON1_ROTOR1, PLIK_ROBOCZY__DRON1_ROTOR2, PLIK_WLASCIWY__DRON1_ROTOR2, PLIK_ROBOCZY__DRON1_ROTOR3, PLIK_WLASCIWY__DRON1_ROTOR3, PLIK_ROBOCZY__DRON1_ROTOR4, PLIK_WLASCIWY__DRON1_ROTOR4};
-  drone.SetCoordFiles(FileNames);
-  drone.Initiate(TemplateFileNames);
-  drone.CalcDroneGlobalCoords();
+
+  const std::string FileNames1[7] = {PLIK_ROBOCZY__DRON_KORPUS, PLIK_WLASCIWY__DRON1_KORPUS, PLIK_ROBOCZY__DRON_ROTOR, PLIK_WLASCIWY__DRON1_ROTOR1, PLIK_WLASCIWY__DRON1_ROTOR2, PLIK_WLASCIWY__DRON1_ROTOR3, PLIK_WLASCIWY__DRON1_ROTOR4};
+  drone1.SetCoordFiles(FileNames1);
+  drone1.Initiate(TemplateFileNames, DRONE1_POS);
+  drone1.CalcDroneGlobalCoords();
+
+  const std::string FileNames2[7] = {PLIK_ROBOCZY__DRON_KORPUS, PLIK_WLASCIWY__DRON2_KORPUS, PLIK_ROBOCZY__DRON_ROTOR, PLIK_WLASCIWY__DRON2_ROTOR1, PLIK_WLASCIWY__DRON2_ROTOR2, PLIK_WLASCIWY__DRON2_ROTOR3, PLIK_WLASCIWY__DRON2_ROTOR4};
+  drone2.SetCoordFiles(FileNames2);
+  drone2.Initiate(TemplateFileNames, DRONE2_POS);
+  drone2.CalcDroneGlobalCoords();
 
 
 
@@ -66,21 +90,92 @@ int main()
   Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON1_ROTOR2);
   Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON1_ROTOR3);
   Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON1_ROTOR4);
+  
+  Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON2_KORPUS);
+  Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON2_ROTOR1);
+  Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON2_ROTOR2);
+  Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON2_ROTOR3);
+  Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON2_ROTOR4);
 
   Lacze.ZmienTrybRys(PzG::TR_3D);
-  Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
+  Lacze.Inicjalizuj();
 
   Lacze.UstawZakresX(0, 200);
   Lacze.UstawZakresY(0, 200);
   Lacze.UstawZakresZ(0, 120);
 
 
-  Lacze.UstawRotacjeXZ(64,65); // Tutaj ustawiany jest widok
+  Lacze.UstawRotacjeXZ(64,65); 
 
-         Lacze.Rysuj();
+       Lacze.Rysuj();
+
+       PrintMenu();
+
+       while(choice!='k'){
+              std::cout << "Twój wybór? (m - menu) > ";
+              std::cin >> choice;
+
+              switch(choice){
+                     case 'a':{
+                            int i;
+                            std::cout << "Wybór aktywnego drona" << std::endl << std::endl;
+                            std::cout << "1- Polozenie: ";
+                            drone1.PrintPosition();
+                            if(dronePtr == &drone1) std::cout << " <-- Dron aktywny";
+                            std::cout << std::endl <<  "2- Polozenie: ";
+                            drone2.PrintPosition();
+                            if(dronePtr == &drone2) std::cout << " <-- Dron aktywny";
+
+                            std::cout << std::endl << "Wprowadź numer aktywnego drona>";
+                            std::cin >> i;
+                            if (i==1) dronePtr = &drone1;
+                            if (i==2) dronePtr = &drone2;
+                            std::cout << "Polozenie drona aktywnego: ";
+                            (*dronePtr).PrintPosition();
+
+                     break;
+                     }
+
+                     case 'p':
+                            std::cout << "Podaj kierunek lotu (kat w stopniach) > ";
+                            std::cin >> angle;
+                            std::cout  << "Podaj długość lotu > ";
+                            std::cin >> distance;
+                            std::cout << "Rysuje zaplanowana sciezke lotu ..." << std::endl;
+                            (*dronePtr).PlanPath(angle, distance, Path);
+                            WritePathToFile(Path, PLIK_TRASY_PRZELOTU);
+                            Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+
+                            std::cout << "Realizacja przelotu ..." << std::endl;
+                            (*dronePtr).VerticalFlight(80, Lacze);
+                            (*dronePtr).Rotate(angle, Lacze);
+                            (*dronePtr).HorizontalFlight(distance, Lacze);
+                            (*dronePtr).VerticalFlight(-80, Lacze);
+
+                            std::cout << "Dron wyladował ..." << std::endl;
+                            Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
+                            Lacze.Rysuj();
+                     break;
+
+                     case 'm':
+                            PrintMenu();
+                     break;
+
+                     case 'k':
+                            std::cout << "Koniec działania programu. " << std::endl;
+                     break;
+
+                     default:
+                            std::cout << "Nieprawidłowy wybór opcji" << std::endl;
+                     break;
+              }
+       }
 
 
-  std::cout << "Nacisnij ENTER, aby zaplanować ścieżkę" << std::flush;
+
+
+
+/*   std::cout << "Nacisnij ENTER, aby zaplanować ścieżkę" << std::flush;
   std::cin.ignore(10000,'\n');
   drone.PlanPath(30, 100, Path);
   WritePathToFile(Path, PLIK_TRASY_PRZELOTU);
@@ -95,10 +190,10 @@ int main()
   std::cout << "Nacisnij ENTER, aby polecieć w pizdu " << std::flush;
   std::cin.ignore(10000,'\n');
 
-  drone.VerticalFlight(50, Lacze);
-  drone.Rotate(30, Lacze);
-  drone.HorizontalFlight(100,Lacze);
-  drone.VerticalFlight(-50, Lacze);
+  (*dronePtr).VerticalFlight(50, Lacze);
+  (*dronePtr).Rotate(30, Lacze);
+  (*dronePtr).HorizontalFlight(100,Lacze);
+  (*dronePtr).VerticalFlight(-50, Lacze); */
 
 
 

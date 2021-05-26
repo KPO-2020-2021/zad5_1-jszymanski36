@@ -15,7 +15,7 @@
 #define ROTOR1_POS 5,-4,5
 #define ROTOR2_POS -5,4,5
 #define ROTOR3_POS -5,-4,5
-#define DRONE_POS 20,20,0
+
 
 
 bool Drone::CalcRotorGlobalCoords(const HexPrism &Rotor) const{
@@ -73,8 +73,10 @@ Vector3D Drone::TransformToParentsCoords(const Vector3D &Point) const{
 
 void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &PathPoints){
 
-  double T_height[SIZE] = {0,0,50};
-  double radians = angle * PI/180;
+  PathPoints.clear();
+  double T_height[SIZE] = {0,0,80};
+  std::cout << Orientation << std::endl;
+  double radians = (angle + Orientation)  * PI/180;
   double T_flight[SIZE] = {cos(radians)*distance, sin(radians)*distance, 0};
   
   Vector3D height(T_height);
@@ -156,16 +158,16 @@ bool Drone::CalcDroneGlobalCoords() const{
   return 1;
 }
 
-void Drone::SetCoordFiles(const std::string filenames[10]){
+void Drone::SetCoordFiles(const std::string filenames[7]){
 
   Body.SetFileNames(filenames[0], filenames[1]);
   Rotor[0].SetFileNames(filenames[2], filenames[3]);
-  Rotor[1].SetFileNames(filenames[4], filenames[5]);
-  Rotor[2].SetFileNames(filenames[6], filenames[7]);
-  Rotor[3].SetFileNames(filenames[8], filenames[9]);
+  Rotor[1].SetFileNames(filenames[2], filenames[4]);
+  Rotor[2].SetFileNames(filenames[2], filenames[5]);
+  Rotor[3].SetFileNames(filenames[2], filenames[6]);
 }
 
-void Drone::Initiate(const std::string FileNames[2]){
+void Drone::Initiate(const std::string FileNames[2], double pos_x, double pos_y, double pos_z){
 
   double TBody[SIZE] = {BODY_POS};
   double TR0[SIZE] = {ROTOR0_POS};
@@ -173,7 +175,7 @@ void Drone::Initiate(const std::string FileNames[2]){
   double TR2[SIZE] = {ROTOR2_POS};
   double TR3[SIZE] = {ROTOR3_POS};
 
-  double TDrone[SIZE] = {DRONE_POS};
+  double TDrone[SIZE] = {pos_x, pos_y, pos_z};
 
   Vector3D VBody(TBody), VR0(TR0), VR1(TR1), VR2(TR2), VR3(TR3), VDrone(TDrone);
 
