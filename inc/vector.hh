@@ -26,6 +26,10 @@ private:
     */
     Type size[Size];
 
+    static int ActiveNumVectors;
+
+    static int AllNumVectors;
+
 public:
 
     /*!
@@ -37,6 +41,12 @@ public:
     * \brief Konstruktor parametryczy wektora z tablicą jako parametr
     */
     Vector(Type [Size]);
+
+    ~Vector();
+
+    static int ReturnActiveNumVectors() {return ActiveNumVectors;};
+
+    static int ReturnAllNumVectors() {return AllNumVectors;};
 
     /*!
     * \brief Przeciążenie operatora dodawania dwóch wektorów
@@ -82,6 +92,12 @@ public:
     double Distance (const Vector<Type, Size> &v1, const Vector<Type, Size> &v2);
 
 };
+
+template<typename Type, int Size>
+int Vector<Type,Size>::ActiveNumVectors=0;
+
+template<typename Type, int Size>
+int Vector<Type,Size>::AllNumVectors=0;
 
 /*!
 * \brief Przeciążenie operatora przesunięcia bitowego w lewo dla wektora

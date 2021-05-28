@@ -64,8 +64,11 @@ int main()
 {
   PzG::LaczeDoGNUPlota  Lacze;
   std::vector<Vector3D> Path;
+  Scene scene;
   Drone drone1, drone2;
-  Drone *dronePtr = &drone1;
+  Drone *dronePtr;
+
+  
 
   char choice;
   double angle, distance;
@@ -82,7 +85,10 @@ int main()
   drone2.Initiate(TemplateFileNames, DRONE2_POS);
   drone2.CalcDroneGlobalCoords();
 
-
+  scene.AddDrone(drone1);
+  scene.AddDrone(drone2);
+  scene.ChooseActiveDrone(1);
+  dronePtr = scene.GetActiveDrone();
 
   Lacze.DodajNazwePliku("../datasets/plaszczyzna.dat");
   Lacze.DodajNazwePliku(PLIK_WLASCIWY__DRON1_KORPUS);
@@ -109,11 +115,17 @@ int main()
 
        Lacze.Rysuj();
 
+       std::cout << "Położenie drona aktywnego: ";
+       (*dronePtr).PrintPosition();
+       std::cout << std::endl;
        PrintMenu();
 
        while(choice!='k'){
+              std::cout << std::endl << "Aktualna ilość obiektów Wektor3D: " << Vector3D::ReturnActiveNumVectors() << std::endl;
+              std::cout << "Laczna ilość obiektów Wektor3D: " << Vector3D::ReturnAllNumVectors() << std::endl;
               std::cout << "Twój wybór? (m - menu) > ";
               std::cin >> choice;
+              
 
               switch(choice){
                      case 'a':{
@@ -121,16 +133,16 @@ int main()
                             std::cout << "Wybór aktywnego drona" << std::endl << std::endl;
                             std::cout << "1- Polozenie: ";
                             drone1.PrintPosition();
-                            if(dronePtr == &drone1) std::cout << " <-- Dron aktywny";
+                            if(scene.ReturnAtiveDroneNum() == 0) std::cout << " <-- Dron aktywny";
                             std::cout << std::endl <<  "2- Polozenie: ";
                             drone2.PrintPosition();
-                            if(dronePtr == &drone2) std::cout << " <-- Dron aktywny";
+                            if(scene.ReturnAtiveDroneNum() == 1) std::cout << " <-- Dron aktywny";
 
                             std::cout << std::endl << "Wprowadź numer aktywnego drona>";
                             std::cin >> i;
-                            if (i==1) dronePtr = &drone1;
-                            if (i==2) dronePtr = &drone2;
-                            std::cout << "Polozenie drona aktywnego: ";
+                            scene.ChooseActiveDrone(i);
+                            dronePtr = scene.GetActiveDrone();
+                            std::cout << std::endl << "Polozenie drona aktywnego: ";
                             (*dronePtr).PrintPosition();
 
                      break;
@@ -152,7 +164,10 @@ int main()
                             (*dronePtr).HorizontalFlight(distance, Lacze);
                             (*dronePtr).VerticalFlight(-80, Lacze);
 
-                            std::cout << "Dron wyladował ..." << std::endl;
+                            std::cout << "Dron wyladował ..." << std::endl << std::endl;
+                            std::cout << "Polozenie drona aktywnego: ";
+                            (*dronePtr).PrintPosition();
+
                             Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
                             Lacze.Rysuj();
                      break;

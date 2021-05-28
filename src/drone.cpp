@@ -75,7 +75,6 @@ void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &Path
 
   PathPoints.clear();
   double T_height[SIZE] = {0,0,80};
-  std::cout << Orientation << std::endl;
   double radians = (angle + Orientation)  * PI/180;
   double T_flight[SIZE] = {cos(radians)*distance, sin(radians)*distance, 0};
   

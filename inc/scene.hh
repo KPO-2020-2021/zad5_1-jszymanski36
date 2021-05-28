@@ -6,13 +6,17 @@ class Scene: Drone {
 
   private:
 
-    Drone DroneArray[2];
+    std::vector<Drone> DroneArray;
 
-    PzG::LaczeDoGNUPlota Lacze;
+    unsigned int ActiveDrone;
 
-  public:
+  public: 
 
-    const Drone &ChooseActiveDrone() const;
+    void AddDrone(Drone new_drone) {DroneArray.push_back(new_drone);};
 
-    Drone &UseActiveDrone();
+    Drone *GetActiveDrone(){return (&DroneArray[ActiveDrone]);};
+
+    void ChooseActiveDrone(unsigned int choice) {ActiveDrone = choice-1;};
+
+    int ReturnAtiveDroneNum() {return ActiveDrone;};
 };

@@ -5,7 +5,7 @@
 * \file 
 * \brief Metody zdefiniowane dla Wektora3D
 */
-
+/* int Vector3D::NumVectors = 0; */
 /*!
 * \brief Przeciążenie operatora << dla Wektora3D
 * 
@@ -32,4 +32,27 @@ std::istream &operator >> (std::istream &in, Vector3D &tmp) {
         in >> tmp[i];
     }
     return in;
+}
+
+template<>
+Vector3D::Vector(){
+    ++ActiveNumVectors;
+    ++AllNumVectors;
+    for (int i = 0; i < SIZE; ++i) {
+        size[i] = 0;
+    }
+}
+
+template <>
+Vector3D::Vector(double tmp[SIZE]) {
+    ++ActiveNumVectors;
+    ++AllNumVectors;
+    for (int i = 0; i < SIZE; ++i) {
+        size[i] = tmp[i];
+    }
+}
+
+template <>
+Vector3D::~Vector(){
+    --ActiveNumVectors;
 }
