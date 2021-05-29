@@ -42,6 +42,8 @@ public:
     */
     Vector(Type [Size]);
 
+    Vector(const Vector<Type, Size> &vec);
+
     ~Vector();
 
     static int ReturnActiveNumVectors() {return ActiveNumVectors;};
@@ -70,6 +72,8 @@ public:
     * \brief Przeciążenie operatora dzielenia wektora przez zmienną
     */
     Vector<Type, Size> operator / (const Type &tmp);
+
+    Vector<Type, Size> operator = (const Vector<Type, Size> &v);
 
     /*!
     * \brief Przeciążenie operatora indeksowania wektora (zwraca zmienną const)
@@ -133,6 +137,7 @@ Vector<Type, Size>::Vector(Type tmp[Size]) {
         size[i] = tmp[i];
     }
 }
+
 
 /*!
 * Dodawanie dwóch wektorów takiego samego typu i rozmiaru
@@ -207,6 +212,14 @@ Vector<Type, Size> Vector<Type, Size>::operator / (const Type &tmp) {
         size[i] /= tmp;
     }
 
+    return *this;
+}
+
+template<typename Type, int Size>
+Vector<Type, Size> Vector<Type, Size>::operator = (const Vector<Type, Size> &v){
+    for(int i = 0; i < Size; ++i){
+        size[i] = v[i];
+    }
     return *this;
 }
 

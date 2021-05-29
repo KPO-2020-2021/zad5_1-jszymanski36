@@ -52,6 +52,15 @@ Vector3D::Vector(double tmp[SIZE]) {
     }
 }
 
+template<>
+Vector3D::Vector(const Vector3D &vec){
+    ++ActiveNumVectors;
+    ++AllNumVectors;   
+    for(int i = 0; i < SIZE; ++i) {
+        size[i] = vec[i];
+    }
+}
+
 template <>
 Vector3D::~Vector(){
     --ActiveNumVectors;
