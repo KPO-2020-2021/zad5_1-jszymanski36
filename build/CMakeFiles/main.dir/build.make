@@ -76,7 +76,6 @@ main_OBJECTS = \
 
 # External object files for target main
 main_EXTERNAL_OBJECTS = \
-"/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/example.cpp.o" \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o" \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/cuboid.cpp.o" \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/drone.cpp.o" \
@@ -86,7 +85,6 @@ main_EXTERNAL_OBJECTS = \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/vector3D.cpp.o"
 
 main: CMakeFiles/main.dir/app/main.cpp.o
-main: CMakeFiles/program.dir/src/example.cpp.o
 main: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 main: CMakeFiles/program.dir/src/cuboid.cpp.o
 main: CMakeFiles/program.dir/src/drone.cpp.o

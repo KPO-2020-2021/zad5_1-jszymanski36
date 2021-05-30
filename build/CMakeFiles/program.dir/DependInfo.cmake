@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jakub/Documents/zad5_1-jszymanski36/src/cuboid.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/cuboid.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/drone.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/drone.cpp.o"
-  "/home/jakub/Documents/zad5_1-jszymanski36/src/example.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/example.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/hexprism.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/hexprism.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/lacze_do_gnuplota.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/matrix3x3.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/matrix3x3.cpp.o"

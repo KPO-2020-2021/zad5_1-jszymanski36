@@ -57,22 +57,9 @@ include CMakeFiles/program.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/program.dir/flags.make
 
-CMakeFiles/program.dir/src/example.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/example.cpp.o: ../src/example.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/example.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/example.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/example.cpp
-
-CMakeFiles/program.dir/src/example.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/example.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jakub/Documents/zad5_1-jszymanski36/src/example.cpp > CMakeFiles/program.dir/src/example.cpp.i
-
-CMakeFiles/program.dir/src/example.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/example.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/Documents/zad5_1-jszymanski36/src/example.cpp -o CMakeFiles/program.dir/src/example.cpp.s
-
 CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o: ../src/lacze_do_gnuplota.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/lacze_do_gnuplota.cpp
 
 CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/cuboid.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/cuboid.cpp.o: ../src/cuboid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/program.dir/src/cuboid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/cuboid.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/cuboid.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/cuboid.cpp
 
 CMakeFiles/program.dir/src/cuboid.cpp.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/program.dir/src/cuboid.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/drone.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/drone.cpp.o: ../src/drone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/program.dir/src/drone.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/program.dir/src/drone.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/drone.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/drone.cpp
 
 CMakeFiles/program.dir/src/drone.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/program.dir/src/drone.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/hexprism.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/hexprism.cpp.o: ../src/hexprism.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/program.dir/src/hexprism.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/program.dir/src/hexprism.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/hexprism.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/hexprism.cpp
 
 CMakeFiles/program.dir/src/hexprism.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/program.dir/src/hexprism.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: ../src/matrix3x3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/program.dir/src/matrix3x3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/program.dir/src/matrix3x3.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/matrix3x3.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/matrix3x3.cpp
 
 CMakeFiles/program.dir/src/matrix3x3.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/program.dir/src/matrix3x3.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/solid.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/solid.cpp.o: ../src/solid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/program.dir/src/solid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/program.dir/src/solid.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/solid.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/solid.cpp
 
 CMakeFiles/program.dir/src/solid.cpp.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/program.dir/src/solid.cpp.s: cmake_force
 
 CMakeFiles/program.dir/src/vector3D.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/vector3D.cpp.o: ../src/vector3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/program.dir/src/vector3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/program.dir/src/vector3D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/vector3D.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/vector3D.cpp
 
 CMakeFiles/program.dir/src/vector3D.cpp.i: cmake_force
@@ -161,7 +148,6 @@ CMakeFiles/program.dir/src/vector3D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/vector3D.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/Documents/zad5_1-jszymanski36/src/vector3D.cpp -o CMakeFiles/program.dir/src/vector3D.cpp.s
 
-program: CMakeFiles/program.dir/src/example.cpp.o
 program: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
 program: CMakeFiles/program.dir/src/cuboid.cpp.o
 program: CMakeFiles/program.dir/src/drone.cpp.o

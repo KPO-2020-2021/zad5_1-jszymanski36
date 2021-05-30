@@ -1,0 +1,8 @@
+var structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter_1_1_j_unit_test_case_data_1_1_j_unit_test_message =
+[
+    [ "JUnitTestMessage", "structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter_1_1_j_unit_test_case_data_1_1_j_unit_test_message.html#aaabe1acd832e3f7732309e71b86b104a", null ],
+    [ "JUnitTestMessage", "structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter_1_1_j_unit_test_case_data_1_1_j_unit_test_message.html#ae9547769057e5456f9e6cdef821edd53", null ],
+    [ "details", "structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter_1_1_j_unit_test_case_data_1_1_j_unit_test_message.html#a4786efc881552d599650f1016ca313f7", null ],
+    [ "message", "structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter_1_1_j_unit_test_case_data_1_1_j_unit_test_message.html#adc56772218ed0b037913ddd3e643e3a0", null ],
+    [ "type", "structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter_1_1_j_unit_test_case_data_1_1_j_unit_test_message.html#a05720a03df5f2817ece9bbfd5a951c25", null ]
+];

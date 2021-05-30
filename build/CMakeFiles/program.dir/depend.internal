@@ -22,10 +22,6 @@ CMakeFiles/program.dir/src/drone.cpp.o
  /home/jakub/Documents/zad5_1-jszymanski36/inc/vector.hh
  /home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
  /home/jakub/Documents/zad5_1-jszymanski36/src/drone.cpp
-CMakeFiles/program.dir/src/example.cpp.o
- ../inc/example.h
- /home/jakub/Documents/zad5_1-jszymanski36/src/example.cpp
- /home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
 CMakeFiles/program.dir/src/hexprism.cpp.o
  /home/jakub/Documents/zad5_1-jszymanski36/inc/cuboid.hh
  /home/jakub/Documents/zad5_1-jszymanski36/inc/hexprism.hh

@@ -1,0 +1,27 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::XmlWriter::scopedElement"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlWriter::scopedElement",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::log\l_assert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#ac9aacb55bcd5540a0bab6d3828f2e4dd",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::log\l_contexts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#a56ab070e3bd0dbf2cfd303545dcbdf8f",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::log\l_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#af6c750ab47ac0c3fe872bbc2205f67fe",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::report_query",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#ab23e113ebabf87f7468a72d259f71d37",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::test\l_case_exception",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#a9803fed81051f1e7dbb1457865192d61",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::test\l_run_end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#a224c3818fc8b1f9bf035d1e8252e22d5",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::JUnitReporter::\ltest_run_end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter.html#aa5501314f5d2f56af110a96a3519f42e",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::test\l_run_start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#abe20d06ffc35a95a6198fd2eac6b15f4",tooltip=" "];
+  Node9 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

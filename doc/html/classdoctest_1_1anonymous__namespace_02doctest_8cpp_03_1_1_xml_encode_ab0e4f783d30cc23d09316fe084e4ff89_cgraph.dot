@@ -1,0 +1,17 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::XmlEncode::encodeTo"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlEncode::encodeTo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::anonymous_namespace\l\{doctest::cpp\}::headerValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1anonymous__namespace_02doctest_8cpp_03.html#ab8859ee1c8c5a642fd9cdf68dcc54d0a",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::anonymous_namespace\l\{doctest::cpp\}::hexEscapeChar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1anonymous__namespace_02doctest_8cpp_03.html#a991216bbca60279956a10b82446df0df",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="doctest::detail::has\l_insertion_operator_impl::os",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html#a50dfa929b76e3581c300a3a8b87d21e2",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::anonymous_namespace\l\{doctest::cpp\}::trailingBytes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1anonymous__namespace_02doctest_8cpp_03.html#a66178853d38a1ee1591b778ed073dd91",tooltip=" "];
+}

@@ -6,9 +6,41 @@
 
 #IncludeRegexTransform: 
 
-../inc/example.h
-../tests/doctest/doctest.h
-../tests/doctest/doctest.h
+/home/jakub/Documents/zad5_1-jszymanski36/inc/cuboid.hh
+solid.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/solid.hh
+
+/home/jakub/Documents/zad5_1-jszymanski36/inc/matrix.hh
+vector.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/vector.hh
+vector3D.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
+iostream
+-
+cstdlib
+-
+
+/home/jakub/Documents/zad5_1-jszymanski36/inc/size.hh
+
+/home/jakub/Documents/zad5_1-jszymanski36/inc/solid.hh
+vector3D.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
+stdio.h
+-
+string
+-
+
+/home/jakub/Documents/zad5_1-jszymanski36/inc/vector.hh
+size.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/size.hh
+iostream
+-
+math.h
+-
+
+/home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
+matrix.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/matrix.hh
 
 /home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
 signal.h
@@ -94,15 +126,9 @@ sys/time.h
 unistd.h
 -
 
-/home/jakub/Documents/zad5_1-jszymanski36/tests/dummy.cpp
+/home/jakub/Documents/zad5_1-jszymanski36/tests/test_cuboid.cpp
 ../tests/doctest/doctest.h
 /home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
-example.h
-/home/jakub/Documents/zad5_1-jszymanski36/tests/example.h
-
-/home/jakub/Documents/zad5_1-jszymanski36/tests/main.cpp
-../tests/doctest/doctest.h
-/home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
-dummy.cpp
-/home/jakub/Documents/zad5_1-jszymanski36/tests/dummy.cpp
+../inc/cuboid.hh
+/home/jakub/Documents/zad5_1-jszymanski36/inc/cuboid.hh
 

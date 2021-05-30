@@ -1,0 +1,16 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::ConsoleReporter::getSuccessOrFailColor"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::getSuccessOrFailColor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::log_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#a60a8c95bc0e13c30e34d9c77cfab214f",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::successOrFailColoredString\lToStream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#ab31c72678bf8ecf8c7c5dd1459f03fe9",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::log_assert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#a33c751254ce3ee2c828956a7df6ed8fa",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::test_case_exception",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#a205c612bd9698fed98fab645e949d26d",tooltip=" "];
+}

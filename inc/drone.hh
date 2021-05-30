@@ -1,44 +1,99 @@
 #pragma once
 
+/*!
+* \file
+* \brief Definicja klasy Drone
+*
+* Plik zawiera deklarację klasy określającą pojęcie dronu i jej metod
+*/
+
 #include "hexprism.hh"
 #include "lacze_do_gnuplota.hh"
 
 #include <iostream>
 #include <vector>
 
+/*!
+* \brief Modeluje pojęcie dronu
+*/
 class Drone: HexPrism, Cuboid {
 
   private:
 
+    /*!
+    * \brief Pozycja dronu (względem globalnego układu współrzędnych)
+    */
     Vector3D Position;
 
+    /*!
+    * \brief Kąt obrotu dronu (względem globalnego układu współrzędnych)
+    */
     double Orientation;
 
+    /*!
+    * \brief Korpus drona
+    */
     Cuboid Body;
 
+    /*!
+    * \brief Cztery rotory drona
+    */
     HexPrism Rotor[4];
 
-    bool CalcBodyGlobalCoords() const;
+    /*!
+    * \brief Oblicz współrzędne globalne korpusu drona
+    */
+    void CalcBodyGlobalCoords() const;
 
-    bool CalcRotorGlobalCoords(const HexPrism &Rotor) const;
+    /*!
+    * \brief Oblicz współrzędne globalne rotoru drona
+    */
+    void CalcRotorGlobalCoords(const HexPrism &Rotor) const;
 
   public:
 
+    /*!
+    * \brief Przetłumacz współrzędne lokalne drona na współrzędne globalne
+    */
     Vector3D TransformToParentsCoords(const Vector3D &Point) const;
 
+    /*!
+    * \brief Zaplanuj ścieżkę przelotu drona
+    */
     void PlanPath (double angle, double distance, std::vector<Vector3D> &PathPoints);
 
+    /*!
+    * \brief Wykonaj pioniowy lot drona na pewną odległość
+    */
     void VerticalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
 
+    /*!
+    * \brief Obróc drona o pewien kąt względem własnej osi z
+    */
     void Rotate (double degrees, PzG::LaczeDoGNUPlota &Lacze);
 
+    /*!
+    * \brief Wykonaj poziomy lot drona na pewną odległość
+    */
     void HorizontalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
 
-    bool CalcDroneGlobalCoords() const;
+    /*!
+    * \brief Oblicz współrzędne globalne drona
+    */
+    void CalcDroneGlobalCoords() const;
 
+    /*!
+    * \brief Ustal pliki zawierające współrzędne wszystkich elementów drona
+    */
     void SetCoordFiles(const std::string filenames[7]);
 
-    void Initiate(const std::string FileNames[2], double pos_x, double pos_y, double pos_z);
+    /*!
+    * \brief Tworzenie drona według brył wzorcowych jego elementów, współrzędnych położenia i kątu obrotu
+    */ 
+    void Initiate(const std::string filenames[2], double pos_x, double pos_y, double pos_z, double angle);
 
+    /*!
+    * \brief Wyświetl pozycję drona w globalnym układzie współrzędnych
+    */
     void PrintPosition() {std::cout << Position;};
 };

@@ -1,0 +1,29 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::XmlReporter::test_case_start"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::test\l_case_start",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlWriter::ensureTagClosed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_writer.html#a037d5f1752cc196aa82318100462d52f",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::test\l_case_start_impl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#a37eff7d3c15b66f2e6263cb428108b39",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="doctest::String::c_str",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1_string.html#a607c6977b193fecf29622110e6081625",tooltip=" "];
+  Node4 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlWriter::endElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_writer.html#a9b01210ada5bca21230ec886bc1c9c1c",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlWriter::newlineIfNecessary",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_writer.html#a0352bfe1b1cb61867f03832d179aee88",tooltip=" "];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlReporter::line",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_reporter.html#aca23f48e6c3f82cb4054e6d68777f808",tooltip=" "];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="doctest::skipPathFromFilename",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest.html#a360d10b305d4e64d753e99484308edbd",tooltip=" "];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlWriter::startElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_writer.html#a1677409347280cfb2e4b4d66121d346a",tooltip=" "];
+  Node9 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::XmlWriter::writeAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_xml_writer.html#a53c9956ac1ee707201621c98d7f79d8c",tooltip=" "];
+}

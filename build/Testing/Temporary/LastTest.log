@@ -1,0 +1,31 @@
+Start testing: May 30 21:23 CEST
+----------------------------------------------------------
+1/1 Testing: program.unit_tests
+1/1 Test: program.unit_tests
+Command: "/home/jakub/Documents/zad5_1-jszymanski36/build/unit_tests" "-V"
+Directory: /home/jakub/Documents/zad5_1-jszymanski36/build/tests
+"program.unit_tests" start time: May 30 21:23 CEST
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.5"
+[doctest] run with "--help" for options
+===============================================================================
+/home/jakub/Documents/zad5_1-jszymanski36/tests/dummy.cpp:13:
+TEST CASE:  complicated integration tests could be here 22
+
+/home/jakub/Documents/zad5_1-jszymanski36/tests/dummy.cpp:16: ERROR: CHECK( d.doSomething() != true ) is NOT correct!
+  values: CHECK( true != true )
+
+===============================================================================
+[doctest] test cases: 4 | 3 passed | 1 failed | 0 skipped
+[doctest] assertions: 4 | 3 passed | 1 failed |
+[doctest] Status: FAILURE!
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"program.unit_tests" end time: May 30 21:23 CEST
+"program.unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 30 21:23 CEST

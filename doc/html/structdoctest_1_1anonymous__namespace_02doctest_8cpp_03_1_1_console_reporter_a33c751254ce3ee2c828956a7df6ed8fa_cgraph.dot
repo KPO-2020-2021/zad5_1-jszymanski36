@@ -1,0 +1,38 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::ConsoleReporter::log_assert"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::log_assert",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::file_line_to_stream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#ae75a8d749ba1971a9726ebacfd2e741b",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="doctest::skipPathFromFilename",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest.html#a360d10b305d4e64d753e99484308edbd",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::fulltext_log_assert\l_to_stream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest_1_1anonymous__namespace_02doctest_8cpp_03.html#aa8bb43589cab9e6931ccd6c56718faf2",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doctest::assertString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest.html#ab56f4f5033407b30858e190309901ff2",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::log_contexts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#a509b533b368be03f333431905b75ce17",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="doctest::IReporter\l::get_active_contexts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1_i_reporter.html#af535d2f4e0bcacbcc87e35994dd97586",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="doctest::IReporter\l::get_num_active_contexts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1_i_reporter.html#aafc10945b736a76a93282050d9d0ff55",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::logTestStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#a086c2f874acec5767022aa17572e75e9",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="doctest::String::c_str",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1_string.html#a607c6977b193fecf29622110e6081625",tooltip=" "];
+  Node10 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::separator_to_stream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#afc24bffe1c7b9b9cfa201841bc5e436e",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::successOrFailColoredString\lToStream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#ab31c72678bf8ecf8c7c5dd1459f03fe9",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::getSuccessOrFailColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#a698e4d8e92ce00f317fde4c49fb34899",tooltip=" "];
+  Node12 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::getSuccessOrFailString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#abbe30dc0af77df13b875d79dfbcfde8c",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="doctest::failureString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest.html#aecddb31b1dc613674128b2b386493385",tooltip=" "];
+}

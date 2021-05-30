@@ -11,6 +11,9 @@
 #include <iostream>
 #include <math.h>
 
+/*!
+* \brief Dokładność z którą są porównywane współrzędne wektora
+*/
 #define MIN_DIFF 0.01
 
 /*!
@@ -26,8 +29,14 @@ private:
     */
     Type size[Size];
 
+    /*!
+    * \brief Liczba aktywych wektorów
+    */
     static int ActiveNumVectors;
 
+    /*!
+    * \brief Liczba wszystkich wektorów
+    */
     static int AllNumVectors;
 
 public:
@@ -42,13 +51,30 @@ public:
     */
     Vector(Type [Size]);
 
+    /*!
+    * \brief Konstruktor kopiujący wektora
+    */
     Vector(const Vector<Type, Size> &vec);
 
+    /*!
+    * \brief Dekonstruktor wektora
+    */
     ~Vector();
 
+    /*!
+    * \brief Zwróć liczbę aktywnych wektorów
+    */
     static int ReturnActiveNumVectors() {return ActiveNumVectors;};
 
+    /*!
+    * \brief Zwróc liczbę wszystkich wektorów
+    */
     static int ReturnAllNumVectors() {return AllNumVectors;};
+
+    /*!
+    * \brief Wyzeruje liczbę wszystich wektorów (używane jedynie do testów)
+    */
+    static void ClearAllNumVectors() {AllNumVectors = 0;};
 
     /*!
     * \brief Przeciążenie operatora dodawania dwóch wektorów
@@ -73,6 +99,9 @@ public:
     */
     Vector<Type, Size> operator / (const Type &tmp);
 
+    /*!
+    * \brief Przeciążenie operatora przyrównania wektorów
+    */
     Vector<Type, Size> operator = (const Vector<Type, Size> &v);
 
     /*!

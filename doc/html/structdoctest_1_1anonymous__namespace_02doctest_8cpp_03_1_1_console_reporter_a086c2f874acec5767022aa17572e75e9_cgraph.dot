@@ -1,0 +1,17 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::ConsoleReporter::logTestStart"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::logTestStart",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::String::c_str",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdoctest_1_1_string.html#a607c6977b193fecf29622110e6081625",tooltip=" "];
+  Node2 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::file_line_to_stream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#ae75a8d749ba1971a9726ebacfd2e741b",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="doctest::skipPathFromFilename",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacedoctest.html#a360d10b305d4e64d753e99484308edbd",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::ConsoleReporter\l::separator_to_stream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_console_reporter.html#afc24bffe1c7b9b9cfa201841bc5e436e",tooltip=" "];
+}

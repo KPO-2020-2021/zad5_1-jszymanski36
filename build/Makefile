@@ -644,33 +644,6 @@ src/drone.cpp.s:
 	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/drone.cpp.s
 .PHONY : src/drone.cpp.s
 
-src/example.o: src/example.cpp.o
-
-.PHONY : src/example.o
-
-# target to build an object file
-src/example.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/example.cpp.o
-.PHONY : src/example.cpp.o
-
-src/example.i: src/example.cpp.i
-
-.PHONY : src/example.i
-
-# target to preprocess a source file
-src/example.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/example.cpp.i
-.PHONY : src/example.cpp.i
-
-src/example.s: src/example.cpp.s
-
-.PHONY : src/example.s
-
-# target to generate assembly for a file
-src/example.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/example.cpp.s
-.PHONY : src/example.cpp.s
-
 src/hexprism.o: src/hexprism.cpp.o
 
 .PHONY : src/hexprism.o
@@ -858,9 +831,6 @@ help:
 	@echo "... src/drone.o"
 	@echo "... src/drone.i"
 	@echo "... src/drone.s"
-	@echo "... src/example.o"
-	@echo "... src/example.i"
-	@echo "... src/example.s"
 	@echo "... src/hexprism.o"
 	@echo "... src/hexprism.i"
 	@echo "... src/hexprism.s"

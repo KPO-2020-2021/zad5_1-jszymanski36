@@ -1,54 +1,110 @@
 
+/*!
+* \file 
+* \brief Definicje metod klasy Drone
+*/
+
 #include "../inc/drone.hh"
 #include "../inc/matrix3x3.hh"
 #include <fstream>
 #include <cmath>
 #include <unistd.h>
+/*!
+* \brief Liczba pi
+*/
 #define PI 3.14159265358979323846
+
+/*!
+* \brief Odległość, którą dron przelatuje za każdym kolejnym rysowaniem lotu
+*/
 #define FLIGHT_INC 2
-#define ROTOR_ROTATE_INC 30
+
+/*!
+* \brief Kąt, o który obracają się rotory za każdym kolejnym rysowaniem lotu
+*/
+#define ROTOR_ROTATE_INC 10
+
+/*!
+* \brief Kąt, o który obraca się dron za każdym kolejnym rysowaniem lotu
+*/
 #define DRONE_ROTATE_INC 5
+
+/*!
+* \brief Skala korpusu względem wzorca (x, y, z)
+*/
 #define BODY_SCALE 10,8,4
+
+/*!
+* \brief Skala rotoru względem wzorca (x, y, z)
+*/
 #define ROTOR_SCALE 8,8,2
+
+/*!
+* \brief Pozycja korpusu względem drona (x, y, z)
+*/
 #define BODY_POS 0,0,2
+
+/*!
+* \brief Pozycja 1. rotoru względem drona (x, y, z)
+*/
 #define ROTOR0_POS 5,4,5
+
+/*!
+* \brief Pozycja 2. rotoru względem drona (x, y, z)
+*/
 #define ROTOR1_POS 5,-4,5
+
+/*!
+* \brief Pozycja 3. rotoru względem drona (x, y, z)
+*/
 #define ROTOR2_POS -5,4,5
+
+/*!
+* \brief Pozycja 4. rotoru względem drona (x, y, z)
+*/
 #define ROTOR3_POS -5,-4,5
 
 
 
-bool Drone::CalcRotorGlobalCoords(const HexPrism &Rotor) const{
+/*! Obliczanie i wpisanie do odpowiedniego pliku globalnych współrzędnych danego rotora drona, na podstawie jego lokalnych współrzędnych i innych parametrów
+* \param[in] Rotor - wskaźnik na dany rotor
+*
+* \return 1 jeśli zostało to wykonane bez problemów, w przeciwnym razie 0
+*/
+void Drone::CalcRotorGlobalCoords(const HexPrism &Rotor) const{
 
   std::ifstream local(Rotor.TakeFileName_LocalCoords());
   std::ofstream global(Rotor.TakeFileName_GlobalCoords());
   Vector3D point;
 
-  if(!local.is_open() || !global.is_open()) return 0;
+  if(!local.is_open() || !global.is_open()) throw std::runtime_error("Błąd w otwieraniu pliku!");
   while(local.is_open()){
     for(int i = 0; i < 4; ++i){
-      if(!(local >> point)) return 1;
+      if(!(local >> point)) return;
       point = Rotor.TransformToParentsCoords(point);
       point = TransformToParentsCoords(point);
       global << point;
     }
     global << std::endl;
   }
-  return 1;
 }
 
-bool Drone::CalcBodyGlobalCoords() const{
+/*! Obliczanie i wpisanie do odpowiedniego pliku globalnych współrzędnych korpusu drona, na podstawie jego lokalnych współrzędnych i innych parametrów
+*
+* \return 1 jeśli zostało to wykonane bez problemów, w przeciwnym razie 0
+*/
+void Drone::CalcBodyGlobalCoords() const{
 
   std::ifstream local(Body.TakeFileName_LocalCoords());
   std::ofstream global(Body.TakeFileName_GlobalCoords());
   Vector3D point;
 
-  if(!local.is_open() || !global.is_open()) return 0;
+  if(!local.is_open() || !global.is_open()) throw std::runtime_error("Błąd w otwieraniu pliku!");
 
   while(true){
     for(int i = 0; i < 4; ++i){
       local >> point;
-      if( local.eof()) return 1;
+      if( local.eof()) return;
       point = Body.TransformToParentsCoords(point);
       point = TransformToParentsCoords(point);
 
@@ -56,9 +112,14 @@ bool Drone::CalcBodyGlobalCoords() const{
     }
     global << std::endl;
   }
-  return 1;
 }
 
+/*!
+* Przetłumaczanie danego punktu z układu lokalnego drona do układu współrzędnych o poziom wyższego (w przykładu układu globalnego)
+* \param[in] Point - punkt w układzie lokalnym
+*
+* \return Punkt w układzie o poziom wyższym
+*/
 Vector3D Drone::TransformToParentsCoords(const Vector3D &Point) const{
 
   Vector3D result;
@@ -71,6 +132,12 @@ Vector3D Drone::TransformToParentsCoords(const Vector3D &Point) const{
   return result;
 }
 
+/*!
+* Oblicz punkty ścieżki dla danego lotu i wpisz do danego kontenera
+* \param[in] angle - kąt w stopniach, na który dron powinien się obrócić podczas lotu
+* \param[in] distance - pozioma odległość na którą dron powinien polecieć
+* \param[in] PathPoints - wskaźnik na kontener zawierający punkty ścieżki przelotu
+*/
 void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &PathPoints){
 
   PathPoints.clear();
@@ -86,15 +153,16 @@ void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &Path
   PathPoints.push_back(Position + flight);
 }
 
+/*!
+* Wykonaj i wyrysuj lot pionowy drona na daną wysokość
+* \param[in] distance - wysokość (może być również ujemna)
+* \param[in] Lacze - łącze do rysowania za pomocą GNUPlota
+*/
 void Drone::VerticalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
 
   CalcDroneGlobalCoords();
   double inc;
-  if(distance > 0){
-    inc = FLIGHT_INC;
-  } else {
-    inc = -FLIGHT_INC;
-  }
+  distance > 0 ? inc=FLIGHT_INC : inc=-FLIGHT_INC;
   double T[3] = {0,0,inc};
   Vector3D trans(T);
 
@@ -111,6 +179,11 @@ void Drone::VerticalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
   }
 }
 
+/*!
+* Wykonaj i wyrysuj lot poziomy drona na daną odległość
+* \param[in] distance - odległość
+* \param[in] Lacze - łącze do rysowania za pomocą GNUPlota
+*/
 void Drone::HorizontalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
 
   double radians = Orientation * PI/180;
@@ -132,6 +205,11 @@ void Drone::HorizontalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
   }
 }
 
+/*!
+* Wykonaj i wyrysuj obrót drona względem własnej osi z o pewien kąt
+* \param[in] degrees - kąt w stopniach
+* \param[in] Lacze - łącze do rysowania za pomocą GNUPlota
+*/
 void Drone::Rotate(double degrees, PzG::LaczeDoGNUPlota &Lacze){
 
   CalcDroneGlobalCoords();
@@ -148,15 +226,22 @@ void Drone::Rotate(double degrees, PzG::LaczeDoGNUPlota &Lacze){
   }
 }
 
-bool Drone::CalcDroneGlobalCoords() const{
+/*! Obliczanie i wpisanie do odpowiedniego pliku globalnych współrzędnych drona, na podstawie jego lokalnych współrzędnych i innych parametrów
+*
+* \return 1 jeśli zostało to wykonane bez problemów, w przeciwnym razie 0
+*/
+void Drone::CalcDroneGlobalCoords() const{
 
-  if(!CalcBodyGlobalCoords()) return 0;
+  CalcBodyGlobalCoords();
   for(int i = 0; i < 4; ++i){
-    if(!CalcRotorGlobalCoords(Rotor[i])) return 0;
+    CalcRotorGlobalCoords(Rotor[i]);
   }
-  return 1;
 }
 
+/*! 
+* Ustawienie nazw plików zawierających współrzędne elementów drona
+* \param[in] filenames - tablica z nazwami w danej kolejności: lokalne korpusu, globalne korpusu, lokalne Rotora1, globalne Rotora1 ... (następnie tak samo dla pozostałych rotorów)
+*/
 void Drone::SetCoordFiles(const std::string filenames[7]){
 
   Body.SetFileNames(filenames[0], filenames[1]);
@@ -166,7 +251,14 @@ void Drone::SetCoordFiles(const std::string filenames[7]){
   Rotor[3].SetFileNames(filenames[2], filenames[6]);
 }
 
-void Drone::Initiate(const std::string FileNames[2], double pos_x, double pos_y, double pos_z){
+/*!
+* Tworzenie współrzędnych lokalnych prostopadłościanu na podstawie współrzędnych wzorcowych jego elementów i położenia
+* \param[in] filenames - tablica zawierająca odpowiednio: nazwę pliku z współrzędnymi wzorcowymi sześcianu i graniastosłupa
+* \param[in] scale_x - współrzędna x-owa położenia drona
+* \param[in] scale_y - współrzędna y-owa położenia drona
+* \param[in] scale_z - współrzędna z-owa położenia drona
+*/
+void Drone::Initiate(const std::string filenames[2], double pos_x, double pos_y, double pos_z, double angle){
 
   double TBody[SIZE] = {BODY_POS};
   double TR0[SIZE] = {ROTOR0_POS};
@@ -179,16 +271,16 @@ void Drone::Initiate(const std::string FileNames[2], double pos_x, double pos_y,
   Vector3D VBody(TBody), VR0(TR0), VR1(TR1), VR2(TR2), VR3(TR3), VDrone(TDrone);
 
   Position = VDrone;
-  Orientation = 0;
+  Orientation = angle;
 
-  Body.SetPosition(VBody);
-  Rotor[0].SetPosition(VR0);
-  Rotor[1].SetPosition(VR1);
-  Rotor[2].SetPosition(VR2);
-  Rotor[3].SetPosition(VR3);
+  Body.SetPosition(VBody, 0);
+  Rotor[0].SetPosition(VR0, 0);
+  Rotor[1].SetPosition(VR1, 0);
+  Rotor[2].SetPosition(VR2, 0);
+  Rotor[3].SetPosition(VR3, 0);
 
-  Body.Initiate(FileNames[0], BODY_SCALE);
+  Body.Initiate(filenames[0], BODY_SCALE);
   for(int i=0; i<4; i++){
-    Rotor[i].Initiate(FileNames[1], ROTOR_SCALE);
+    Rotor[i].Initiate(filenames[1], ROTOR_SCALE);
   }
 }

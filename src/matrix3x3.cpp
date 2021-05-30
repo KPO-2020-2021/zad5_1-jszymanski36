@@ -8,6 +8,10 @@
 
 #include "../inc/matrix3x3.hh"
 
+
+/*!
+* \brief Liczba pi
+*/
 #define PI 3.14159265358979323846
 
 /*!

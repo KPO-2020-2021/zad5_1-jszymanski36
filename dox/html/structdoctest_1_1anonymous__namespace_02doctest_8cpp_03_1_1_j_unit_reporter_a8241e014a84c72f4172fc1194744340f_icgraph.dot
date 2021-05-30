@@ -1,0 +1,10 @@
+digraph "doctest::anonymous_namespace{doctest::cpp}::JUnitReporter::line"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::JUnitReporter::line",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="doctest::anonymous\l_namespace\{doctest::\lcpp\}::JUnitReporter::\llog_assert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdoctest_1_1anonymous__namespace_02doctest_8cpp_03_1_1_j_unit_reporter.html#a7cef0d3c46345f2d20ad8f2c8a13114e",tooltip=" "];
+}

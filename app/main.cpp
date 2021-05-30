@@ -13,7 +13,6 @@
 #include <string>
 
 #include "exampleConfig.h"
-#include "example.h"
 #include "../inc/scene.hh"
 #include "../inc/matrix3x3.hh"
 #include "../inc/lacze_do_gnuplota.hh"
@@ -38,20 +37,35 @@
 #define PLIK_WZORCOWEGO_SZESCIANU       "../datasets/szescian.dat"
 #define PLIK_WZORCOWEGO_GRANIASTOSLUPA6 "../datasets/graniastoslup6.dat"
 
+/*!
+* \brief Pozycja 1. drona
+*/
 #define DRONE1_POS 20,20,0
+
+/*!
+* \brief Pozycja 2. drona
+*/
 #define DRONE2_POS 80,50,0
 
-bool WritePathToFile(std::vector<Vector3D> PathPoints, std::string FileName){
+
+/*!
+* \brief Zapisz ścieżkę lotu do odpowiedniego pliku
+* \param[in] PathPoints - kontener zawierający poszczególne punkty na planowanej ścieżce lotu drona
+* \param[in] FileName - nazwa pliku do którego ścieżka powinna zostać zapisana
+*/
+void WritePathToFile(std::vector<Vector3D> PathPoints, std::string FileName){
        std::ofstream file(FileName);
 
-       if(!file.is_open()) return 0;
+       if(!file.is_open()) throw std::runtime_error("Błąd w otwieraniu pliku!");
        file << PathPoints[0];
        file << PathPoints[1];
        file << PathPoints[2];
        file << PathPoints[3];
-       return 1;
 }
 
+/*!
+* \brief Wyświetl opcje menu programu
+*/
 void PrintMenu(){
 
        std::cout << "a - wybierz aktywnego drona" << std::endl;
@@ -66,24 +80,24 @@ int main()
   std::vector<Vector3D> Path;
   Scene scene;
   Drone drone1, drone2;
-  Drone *dronePtr;
+  Drone *dronePtr;          // wskaźnik na aktywnego drona, to przez niego wykonywane są operacje na dronie
 
-  
-
-  char choice;
-  double angle, distance;
+  char choice;              // wybór opcji przez użytkownika
+  double angle, distance;   // kąt i odległość wybierane przez użytkownika
 
   const std::string TemplateFileNames[2] = {PLIK_WZORCOWEGO_SZESCIANU, PLIK_WZORCOWEGO_GRANIASTOSLUPA6};
-
   const std::string FileNames1[7] = {PLIK_ROBOCZY__DRON_KORPUS, PLIK_WLASCIWY__DRON1_KORPUS, PLIK_ROBOCZY__DRON_ROTOR, PLIK_WLASCIWY__DRON1_ROTOR1, PLIK_WLASCIWY__DRON1_ROTOR2, PLIK_WLASCIWY__DRON1_ROTOR3, PLIK_WLASCIWY__DRON1_ROTOR4};
+
   drone1.SetCoordFiles(FileNames1);
-  drone1.Initiate(TemplateFileNames, DRONE1_POS);
+  drone1.Initiate(TemplateFileNames, DRONE1_POS, 0);
   drone1.CalcDroneGlobalCoords();
+
 
   const std::string FileNames2[7] = {PLIK_ROBOCZY__DRON_KORPUS, PLIK_WLASCIWY__DRON2_KORPUS, PLIK_ROBOCZY__DRON_ROTOR, PLIK_WLASCIWY__DRON2_ROTOR1, PLIK_WLASCIWY__DRON2_ROTOR2, PLIK_WLASCIWY__DRON2_ROTOR3, PLIK_WLASCIWY__DRON2_ROTOR4};
   drone2.SetCoordFiles(FileNames2);
-  drone2.Initiate(TemplateFileNames, DRONE2_POS);
+  drone2.Initiate(TemplateFileNames, DRONE2_POS, 30);
   drone2.CalcDroneGlobalCoords();
+
 
   scene.AddDrone(drone1);
   scene.AddDrone(drone2);
@@ -112,8 +126,7 @@ int main()
 
 
   Lacze.UstawRotacjeXZ(64,65); 
-
-       Lacze.Rysuj();
+  Lacze.Rysuj();
 
        std::cout << "Położenie drona aktywnego: ";
        (*dronePtr).PrintPosition();
@@ -133,10 +146,10 @@ int main()
                             std::cout << "Wybór aktywnego drona" << std::endl << std::endl;
                             std::cout << "1- Polozenie: ";
                             drone1.PrintPosition();
-                            if(scene.ReturnAtiveDroneNum() == 0) std::cout << " <-- Dron aktywny";
+                            if(scene.ReturnAtiveDroneNum() == 0) std::cout << " ^Dron aktywny";
                             std::cout << std::endl <<  "2- Polozenie: ";
                             drone2.PrintPosition();
-                            if(scene.ReturnAtiveDroneNum() == 1) std::cout << " <-- Dron aktywny";
+                            if(scene.ReturnAtiveDroneNum() == 1) std::cout << " ^Dron aktywny";
 
                             std::cout << std::endl << "Wprowadź numer aktywnego drona>";
                             std::cin >> i;
@@ -185,52 +198,5 @@ int main()
                      break;
               }
        }
-
-
-
-
-
-/*   std::cout << "Nacisnij ENTER, aby zaplanować ścieżkę" << std::flush;
-  std::cin.ignore(10000,'\n');
-  drone.PlanPath(30, 100, Path);
-  WritePathToFile(Path, PLIK_TRASY_PRZELOTU);
-    Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
-
-
-  
-
-  Lacze.Rysuj();        // Teraz powinno pojawic sie okienko gnuplota
-                        // z rysunkiem, o ile istnieje plik "prostopadloscian1.pow"
-
-  std::cout << "Nacisnij ENTER, aby polecieć w pizdu " << std::flush;
-  std::cin.ignore(10000,'\n');
-
-  (*dronePtr).VerticalFlight(50, Lacze);
-  (*dronePtr).Rotate(30, Lacze);
-  (*dronePtr).HorizontalFlight(100,Lacze);
-  (*dronePtr).VerticalFlight(-50, Lacze); */
-
-
-
-/*   cout << "Nacisnij ENTER, aby pokazac sciezke przelotu drona " << flush;
-  cin.ignore(10000,'\n');
-
-
-  if (!DodajTrasePrzelotu(Lacze)) return 1;
-  Lacze.Rysuj();
-
-
-  cout << "Nacisnij ENTER, aby wykonac animacje lotu drona " << flush;
-  cin.ignore(10000,'\n');
-  if (!AnimacjaLotuDrona(Lacze)) return 1;
-
-  cout << endl << "Nacisnij ENTER, aby usunac sciezke ... " << flush;
-  cin.ignore(10000,'\n');
-
-  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
-  Lacze.Rysuj();
-  
-  cout << "Nacisnij ENTER, aby zakonczyc ... " << flush;
-  cin.ignore(10000,'\n'); */
-  
+       return 0;
 }

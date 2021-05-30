@@ -3,5 +3,6 @@
     "iosfwd": "cpp",
     "ostream": "cpp",
     "iterator": "cpp"
-  }
+  },
+  "cmake.configureOnOpen": false
 }

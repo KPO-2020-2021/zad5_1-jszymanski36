@@ -5,7 +5,7 @@
 * \file 
 * \brief Metody zdefiniowane dla Wektora3D
 */
-/* int Vector3D::NumVectors = 0; */
+
 /*!
 * \brief Przeciążenie operatora << dla Wektora3D
 * 

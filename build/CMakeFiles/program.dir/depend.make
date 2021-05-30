@@ -22,10 +22,6 @@ CMakeFiles/program.dir/src/drone.cpp.o: ../inc/vector.hh
 CMakeFiles/program.dir/src/drone.cpp.o: ../inc/vector3D.hh
 CMakeFiles/program.dir/src/drone.cpp.o: ../src/drone.cpp
 
-CMakeFiles/program.dir/src/example.cpp.o: ../inc/example.h
-CMakeFiles/program.dir/src/example.cpp.o: ../src/example.cpp
-CMakeFiles/program.dir/src/example.cpp.o: ../tests/doctest/doctest.h
-
 CMakeFiles/program.dir/src/hexprism.cpp.o: ../inc/cuboid.hh
 CMakeFiles/program.dir/src/hexprism.cpp.o: ../inc/hexprism.hh
 CMakeFiles/program.dir/src/hexprism.cpp.o: ../inc/matrix.hh

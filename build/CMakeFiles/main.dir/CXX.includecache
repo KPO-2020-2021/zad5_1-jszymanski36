@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../inc/example.h
-../tests/doctest/doctest.h
-../tests/doctest/doctest.h
-
 /home/jakub/Documents/zad5_1-jszymanski36/app/main.cpp
 ../tests/doctest/doctest.h
 /home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
@@ -25,8 +21,6 @@ string
 -
 exampleConfig.h
 /home/jakub/Documents/zad5_1-jszymanski36/app/exampleConfig.h
-example.h
-/home/jakub/Documents/zad5_1-jszymanski36/app/example.h
 ../inc/scene.hh
 /home/jakub/Documents/zad5_1-jszymanski36/inc/scene.hh
 ../inc/matrix3x3.hh

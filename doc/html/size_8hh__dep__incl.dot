@@ -1,0 +1,52 @@
+digraph "size.hh"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="size.hh",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="vector.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vector_8hh.html",tooltip="Definicja szablonu Vector."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="matrix.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix_8hh.html",tooltip="Definicja szablonu Matrix."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="vector3D.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vector3_d_8hh.html",tooltip="konkretyzacja szablonu Vector3D"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="solid.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$solid_8hh.html",tooltip="Definicja klasy Solid."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="cuboid.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cuboid_8hh.html",tooltip="Deklaracja klasy Cuboid."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="hexprism.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hexprism_8hh.html",tooltip="Deklaracja klasy HexPrism."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="drone.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drone_8hh.html",tooltip="Definicja klasy Drone."];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="scene.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$scene_8hh.html",tooltip="Deklaracja klasy Sceny."];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$app_2main_8cpp.html",tooltip=" "];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="drone.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drone_8cpp.html",tooltip="Definicje metod klasy Drone."];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="hexprism.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hexprism_8cpp.html",tooltip="Definicje metod klasy HexPrism."];
+  Node7 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="test_hexprism.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__hexprism_8cpp.html",tooltip="Plik zawiera testy dotyczące klasy HexPrism."];
+  Node6 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="cuboid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cuboid_8cpp.html",tooltip="Definicje metod klasy Cuboid."];
+  Node6 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="test_cuboid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__cuboid_8cpp.html",tooltip="Plik zawiera testy dotyczące klasy Cuboid."];
+  Node5 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="solid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$solid_8cpp.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="matrix3x3.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix3x3_8hh.html",tooltip="konkretyzacja szablonu Matrix3x3"];
+  Node17 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix3x3_8cpp.html",tooltip="Metody zdefiniowane dla Macierzy3x3."];
+  Node17 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="test_matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__matrix3x3_8cpp.html",tooltip=" "];
+  Node4 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="vector3D.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vector3_d_8cpp.html",tooltip="Metody zdefiniowane dla Wektora3D."];
+  Node4 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="test_vector3D.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__vector3_d_8cpp.html",tooltip="Plik zawiera testy dotyczące wektorów 3D."];
+}

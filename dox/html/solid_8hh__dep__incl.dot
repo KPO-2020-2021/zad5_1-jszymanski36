@@ -1,0 +1,25 @@
+digraph "solid.hh"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="solid.hh",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Definicja klasy Solid."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="cuboid.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cuboid_8hh.html",tooltip="Deklaracja klasy Cuboid."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="hexprism.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hexprism_8hh.html",tooltip="Deklaracja klasy HexPrism."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="drone.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drone_8hh.html",tooltip="Definicja klasy Drone."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="scene.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$scene_8hh.html",tooltip="Deklaracja klasy Sceny."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$app_2main_8cpp.html",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="drone.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drone_8cpp.html",tooltip="Definicje metod klasy Drone."];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="hexprism.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hexprism_8cpp.html",tooltip="Definicje metod klasy HexPrism."];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="cuboid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cuboid_8cpp.html",tooltip="Definicje metod klasy Cuboid."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="solid.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$solid_8cpp.html",tooltip=" "];
+}
