@@ -127,6 +127,7 @@ Metody publiczne</h2></td></tr>
 <tr class="memdesc:aed2de7957e94df45f52c5304ac0e6e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążenie operatora mnożenia wektora przez zmienną  <a href="class_vector.html#aed2de7957e94df45f52c5304ac0e6e0d">Więcej...</a><br /></td></tr>
 <tr class="separator:aed2de7957e94df45f52c5304ac0e6e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a882b30054590e4e4d924a1159ccc25a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; Type, Size &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vector.html#a882b30054590e4e4d924a1159ccc25a0">operator*</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; Type, Size &gt; &amp;v) const</td></tr>
+<tr class="memdesc:a882b30054590e4e4d924a1159ccc25a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążenie operatora mnożenia wektora przez wektor.  <a href="class_vector.html#a882b30054590e4e4d924a1159ccc25a0">Więcej...</a><br /></td></tr>
 <tr class="separator:a882b30054590e4e4d924a1159ccc25a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a469bf267f52bd18b5b9f27cd748c26b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; Type, Size &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vector.html#a469bf267f52bd18b5b9f27cd748c26b0">operator/</a> (const Type &amp;tmp)</td></tr>
 <tr class="memdesc:a469bf267f52bd18b5b9f27cd748c26b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążenie operatora dzielenia wektora przez zmienną  <a href="class_vector.html#a469bf267f52bd18b5b9f27cd748c26b0">Więcej...</a><br /></td></tr>
@@ -155,9 +156,6 @@ Statyczne metody publiczne</h2></td></tr>
 <tr class="memitem:a55eba486f96f978032da869b56db4b01"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vector.html#a55eba486f96f978032da869b56db4b01">ReturnAllNumVectors</a> ()</td></tr>
 <tr class="memdesc:a55eba486f96f978032da869b56db4b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwróc liczbę wszystkich wektorów.  <a href="class_vector.html#a55eba486f96f978032da869b56db4b01">Więcej...</a><br /></td></tr>
 <tr class="separator:a55eba486f96f978032da869b56db4b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7820b202924439ac13c3b5318dc5c114"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vector.html#a7820b202924439ac13c3b5318dc5c114">ClearAllNumVectors</a> ()</td></tr>
-<tr class="memdesc:a7820b202924439ac13c3b5318dc5c114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyzeruje liczbę wszystich wektorów (używane jedynie do testów)  <a href="class_vector.html#a7820b202924439ac13c3b5318dc5c114">Więcej...</a><br /></td></tr>
-<tr class="separator:a7820b202924439ac13c3b5318dc5c114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
@@ -196,7 +194,7 @@ template&lt;typename Type , int Size&gt; </div>
 </div><div class="memdoc">
 <p>Inicjalizuje zmienną typu wektor o danym typie danych i rozmiarze. Wypełnia ten wektor zerami. </p>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00151">151</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00148">148</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -224,7 +222,7 @@ template&lt;typename Type , int Size&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00164">164</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00161">161</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -268,35 +266,6 @@ template&lt;typename Type , int Size&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a id="a7820b202924439ac13c3b5318dc5c114"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7820b202924439ac13c3b5318dc5c114">&#9670;&nbsp;</a></span>ClearAllNumVectors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , int Size&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void <a class="el" href="class_vector.html">Vector</a>&lt; Type, Size &gt;::ClearAllNumVectors </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00077">77</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
-
-</div>
-</div>
 <a id="abeca77a2965c8b47a37faa11e76d793f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abeca77a2965c8b47a37faa11e76d793f">&#9670;&nbsp;</a></span>Distance()</h2>
 
@@ -353,7 +322,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Iloczyn argumentów jako wektor tego samego typu i rozmiaru </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00213">213</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00210">210</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -375,7 +344,7 @@ template&lt;typename Type , int Size&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00222">222</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00219">219</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -405,7 +374,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Sumę argumentów jako wektor tego samego typu i rozmiaru </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00180">180</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00177">177</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -435,7 +404,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Różnicę argumentów jako wektor tego samego typu i rozmiaru </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00197">197</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00194">194</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -465,7 +434,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Iloraz argumentów jako wektor tego samego typu i rozmiaru </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00239">239</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00236">236</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -487,7 +456,7 @@ template&lt;typename Type , int Size&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00248">248</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00245">245</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -517,7 +486,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>1 jeżeli wektory mają takie same wartości, 0 jeżeli nie (przy pewnej określonej tolerancji) </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00292">292</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00289">289</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -547,7 +516,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Wartość wektora w danym indeksie wyrażona jako wartość modyfikowalna Type </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00280">280</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00277">277</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>
@@ -577,7 +546,7 @@ template&lt;typename Type , int Size&gt; </div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Wartość wektora w danym indeksie wyrażona jako wartość stała Type </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00264">264</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="vector_8hh_source.html#l00261">261</a> pliku <a class="el" href="vector_8hh_source.html">vector.hh</a>.</p>
 
 </div>
 </div>

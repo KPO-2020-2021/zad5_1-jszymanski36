@@ -72,11 +72,6 @@ public:
     static int ReturnAllNumVectors() {return AllNumVectors;};
 
     /*!
-    * \brief Wyzeruje liczbę wszystich wektorów (używane jedynie do testów)
-    */
-    static void ClearAllNumVectors() {AllNumVectors = 0;};
-
-    /*!
     * \brief Przeciążenie operatora dodawania dwóch wektorów
     */
     Vector<Type, Size> operator + (const Vector<Type, Size> &v);
@@ -91,7 +86,9 @@ public:
     */
     Vector<Type, Size> operator * (const Type &tmp);
 
-
+    /*!
+    * \brief Przeciążenie operatora mnożenia wektora przez wektor
+    */
     Vector<Type, Size> operator * (const Vector<Type, Size> &v) const;
 
     /*!
