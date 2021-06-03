@@ -70,7 +70,8 @@ void PrintMenu(){
 
        std::cout << "a - wybierz aktywnego drona" << std::endl;
        std::cout << "p - zadaj parametry przelotu" << std::endl;
-       std::cout << "m - wyswietl menu" << std::endl << std::endl;
+       std::cout << "m - wyswietl menu" << std::endl;
+       std::cout << "r - wykonaj ruch po okręgu o zadanym promieniu" << std::endl << std::endl;
        std::cout << "k - koniec działania programu" << std::endl;
 }
 
@@ -128,14 +129,13 @@ int main()
   Lacze.UstawRotacjeXZ(64,65); 
   Lacze.Rysuj();
 
-       std::cout << "Położenie drona aktywnego: ";
-       (*dronePtr).PrintPosition();
+       std::cout << "Położenie drona aktywnego: " << (*dronePtr).ReturnPosition();
        std::cout << std::endl;
        PrintMenu();
 
        while(choice!='k'){
               std::cout << std::endl << "Aktualna ilość obiektów Wektor3D: " << Vector3D::ReturnActiveNumVectors() << std::endl;
-              std::cout << "Laczna ilość obiektów Wektor3D: " << Vector3D::ReturnAllNumVectors() << std::endl;
+              std::cout << "Laczna ilość obiektów Wektor3D: " << Vector3D::ReturnAllNumVectors() << std::endl << std::endl;
               std::cout << "Twój wybór? (m - menu) > ";
               std::cin >> choice;
               
@@ -144,19 +144,16 @@ int main()
                      case 'a':{
                             int i;
                             std::cout << "Wybór aktywnego drona" << std::endl << std::endl;
-                            std::cout << "1- Polozenie: ";
-                            drone1.PrintPosition();
+                            std::cout << "1- Polozenie: " << scene.GetDrone(0).ReturnPosition();
                             if(scene.ReturnAtiveDroneNum() == 0) std::cout << " ^Dron aktywny";
-                            std::cout << std::endl <<  "2- Polozenie: ";
-                            drone2.PrintPosition();
+                            std::cout << std::endl <<  "2- Polozenie: " << scene.GetDrone(1).ReturnPosition();
                             if(scene.ReturnAtiveDroneNum() == 1) std::cout << " ^Dron aktywny";
 
                             std::cout << std::endl << "Wprowadź numer aktywnego drona>";
                             std::cin >> i;
                             scene.ChooseActiveDrone(i);
                             dronePtr = scene.GetActiveDrone();
-                            std::cout << std::endl << "Polozenie drona aktywnego: ";
-                            (*dronePtr).PrintPosition();
+                            std::cout << std::endl << "Polozenie drona aktywnego: " << (*dronePtr).ReturnPosition();
 
                      break;
                      }
@@ -166,7 +163,7 @@ int main()
                             std::cin >> angle;
                             std::cout  << "Podaj długość lotu > ";
                             std::cin >> distance;
-                            std::cout << "Rysuje zaplanowana sciezke lotu ..." << std::endl;
+                            std::cout << std::endl << "Rysuje zaplanowana sciezke lotu ..." << std::endl;
                             (*dronePtr).PlanPath(angle, distance, Path);
                             WritePathToFile(Path, PLIK_TRASY_PRZELOTU);
                             Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
@@ -178,8 +175,7 @@ int main()
                             (*dronePtr).VerticalFlight(-80, Lacze);
 
                             std::cout << "Dron wyladował ..." << std::endl << std::endl;
-                            std::cout << "Polozenie drona aktywnego: ";
-                            (*dronePtr).PrintPosition();
+                            std::cout << "Polozenie drona aktywnego: " << (*dronePtr).ReturnPosition();
 
                             Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
                             Lacze.Rysuj();
@@ -191,6 +187,16 @@ int main()
 
                      case 'k':
                             std::cout << "Koniec działania programu. " << std::endl;
+                     break;
+
+                     case 'r':
+                            std::cout << "Podaj promień okręgu: > ";
+                            std::cin >> distance;
+                            std::cout << std::endl << "Realizacja przelotu ..." << std::endl;
+                            (*dronePtr).GoAround(distance, Lacze);
+                            
+                            std::cout << "Dron wylądował ..." << std::endl << std::endl;
+                            std::cout << "Polozenie drona aktywnego: " << (*dronePtr).ReturnPosition();
                      break;
 
                      default:

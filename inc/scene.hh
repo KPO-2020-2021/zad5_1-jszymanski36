@@ -39,6 +39,11 @@ class Scene: Drone {
     Drone *GetActiveDrone(){return (&DroneArray[ActiveDrone]);};
 
     /*!
+    * \brief Zwróć drona o podanym indeksie
+    */
+    Drone GetDrone(int index){return (DroneArray[index]);};
+
+    /*!
     * \brief Wybierz aktywnego drona, podając jego numer (zaczynając od 1)
     */
     void ChooseActiveDrone(unsigned int choice) {ActiveDrone = choice-1;};

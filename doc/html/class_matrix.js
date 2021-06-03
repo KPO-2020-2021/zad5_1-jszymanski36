@@ -10,6 +10,5 @@ var class_matrix =
     [ "operator+", "class_matrix.html#aabb4b6732c6ca60fee5f69f81723da4b", null ],
     [ "operator==", "class_matrix.html#a370c073bfa0f227d5d03efcddaeee974", null ],
     [ "RotationMatrix", "class_matrix.html#a689c1d74df7855657ef8fcd9a09ae93b", null ],
-    [ "RotationMatrix4x4", "class_matrix.html#a41e123739350fed2667112da2319a757", null ],
     [ "value", "class_matrix.html#ac3edb79a8b1935163cf99c19834eb350", null ]
 ];

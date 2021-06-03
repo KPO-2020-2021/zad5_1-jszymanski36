@@ -154,6 +154,18 @@ void Drone::PlanPath (double angle, double distance, std::vector<Vector3D> &Path
 }
 
 /*!
+* Obróć każdy z rotorów drona o dany kat, w odpowiednim kierunku odpowiadającym kierunkowi obrotu rotorów rzeczywistego drona
+* \param[in] degrees - kąt obrotu rotorów w stopniach
+*/
+void Drone::SpinRotors(double degrees){
+  
+  Rotor[0].Rotate(degrees);
+  Rotor[1].Rotate(-degrees);
+  Rotor[2].Rotate(degrees);
+  Rotor[3].Rotate(-degrees); 
+}
+
+/*!
 * Wykonaj i wyrysuj lot pionowy drona na daną wysokość
 * \param[in] distance - wysokość (może być również ujemna)
 * \param[in] Lacze - łącze do rysowania za pomocą GNUPlota
@@ -167,11 +179,7 @@ void Drone::VerticalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
   Vector3D trans(T);
 
   for(int i = 0; i < abs(distance); i+=FLIGHT_INC){
-    
-    Rotor[0].Rotate(ROTOR_ROTATE_INC);
-    Rotor[1].Rotate(-ROTOR_ROTATE_INC);
-    Rotor[2].Rotate(ROTOR_ROTATE_INC);
-    Rotor[3].Rotate(-ROTOR_ROTATE_INC);
+    SpinRotors(ROTOR_ROTATE_INC);
     Position = Position + trans;
     CalcDroneGlobalCoords();
     usleep(100000);
@@ -194,10 +202,7 @@ void Drone::HorizontalFlight(double distance, PzG::LaczeDoGNUPlota &Lacze){
   CalcDroneGlobalCoords();
 
   for(int i = 0; i < distance; i+=FLIGHT_INC){
-    Rotor[0].Rotate(ROTOR_ROTATE_INC);
-    Rotor[1].Rotate(-ROTOR_ROTATE_INC);
-    Rotor[2].Rotate(ROTOR_ROTATE_INC);
-    Rotor[3].Rotate(-ROTOR_ROTATE_INC);
+    SpinRotors(ROTOR_ROTATE_INC);
     Position = Position + trans;
     CalcDroneGlobalCoords();
     usleep(100000);
@@ -215,10 +220,7 @@ void Drone::Rotate(double degrees, PzG::LaczeDoGNUPlota &Lacze){
   CalcDroneGlobalCoords();
 
   for(int i = 0; i < degrees; i+=DRONE_ROTATE_INC){
-    Rotor[0].Rotate(ROTOR_ROTATE_INC);
-    Rotor[1].Rotate(-ROTOR_ROTATE_INC);
-    Rotor[2].Rotate(ROTOR_ROTATE_INC);
-    Rotor[3].Rotate(-ROTOR_ROTATE_INC);
+    SpinRotors(ROTOR_ROTATE_INC);
     Orientation += DRONE_ROTATE_INC;
     CalcDroneGlobalCoords();
     usleep(100000);
@@ -283,4 +285,42 @@ void Drone::Initiate(const std::string filenames[2], double pos_x, double pos_y,
   for(int i=0; i<4; i++){
     Rotor[i].Initiate(filenames[1], ROTOR_SCALE);
   }
+}
+
+/*!
+* Poleć do góry na standardową wysokość
+* Poleć do przodu na odległość równą promieniowi
+* Obróć dronem o 90 w kierunku lotu po okręgu
+* Wykonaj lot po okręgu o promieniu podanym w argumencie i środku w miejscu na który dron się początkowo wzniósł
+* Obróć dronem o kolejne 90 i wróć na środek okręgu
+* Wyląduj w miejscu z którego dron wystartował
+* \param[in] radius - promień okręgu
+* \param[in] Lacze - łącze do rysowania za pomocą GNUPlota
+*/
+void Drone::GoAround(double radius, PzG::LaczeDoGNUPlota &Lacze){
+
+  double T[SIZE] = {cos(Orientation * PI/180) * radius, sin(Orientation * PI/180) * radius, 0};
+  Vector3D RadiusVector(T);         // Obracający się wektor
+
+  VerticalFlight(80, Lacze);
+  Vector3D InitialPos(Position);    // Zapamiętaj położenie środka okręgu
+  HorizontalFlight(radius, Lacze);
+
+  Matrix3x3 MatRot;
+  MatRot.RotationMatrix(DRONE_ROTATE_INC);
+
+  Rotate(90, Lacze);
+  for(int i = 0; i < 360; i+=DRONE_ROTATE_INC){
+    RadiusVector = MatRot * RadiusVector;   // Pozycja podczas lotu po okręgu jest sumą wektora położenia środka okręgu
+    Position = InitialPos + RadiusVector;   // i obracającego się wektora o długości równej promieniowi   
+    Orientation += DRONE_ROTATE_INC;        
+    SpinRotors(ROTOR_ROTATE_INC);
+    CalcDroneGlobalCoords();
+    usleep(100000);
+    Lacze.Rysuj(); 
+  }
+
+  Rotate(90, Lacze);
+  HorizontalFlight(radius, Lacze);
+  VerticalFlight(-80, Lacze);
 }

@@ -63,6 +63,11 @@ class Drone: HexPrism, Cuboid {
     void PlanPath (double angle, double distance, std::vector<Vector3D> &PathPoints);
 
     /*!
+    * \brief Obróć każdy z rotorów o pewien kąt w odpowiednim kierunku
+    */
+    void SpinRotors(double degrees);
+
+    /*!
     * \brief Wykonaj pioniowy lot drona na pewną odległość
     */
     void VerticalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
@@ -76,6 +81,11 @@ class Drone: HexPrism, Cuboid {
     * \brief Wykonaj poziomy lot drona na pewną odległość
     */
     void HorizontalFlight (double distance, PzG::LaczeDoGNUPlota &Lacze);
+
+    /*!
+    * \brief Wzleć do góry, poleć do przodu o pewną odległość, wykonaj lot po okręgu względem punktu do którego dron się początkowo wzniósł, wróć na poprzednie miejsce
+    */
+    void GoAround(double radius, PzG::LaczeDoGNUPlota &Lacze);
 
     /*!
     * \brief Oblicz współrzędne globalne drona
@@ -95,5 +105,5 @@ class Drone: HexPrism, Cuboid {
     /*!
     * \brief Wyświetl pozycję drona w globalnym układzie współrzędnych
     */
-    void PrintPosition() {std::cout << Position;};
+    Vector3D ReturnPosition() {return Position;};
 };

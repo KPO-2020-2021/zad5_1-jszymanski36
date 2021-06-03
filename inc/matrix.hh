@@ -75,11 +75,6 @@ public:
     * \brief Uzyskanie macierzy jednostkowej
     */
     void IdentityMatrix();
-
-    /*!
-    * \brief Obliczanie czterowymiarowej macierzy obrotu i translacji
-    */
-    void RotationMatrix4x4(double alpha, double beta, double gamma, Vector<double, SIZE> transl);
 };
 
 /*!

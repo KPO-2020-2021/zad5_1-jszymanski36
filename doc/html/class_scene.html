@@ -114,6 +114,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a6d474c17adda836c8f5476bf141e5c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_drone.html">Drone</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a6d474c17adda836c8f5476bf141e5c67">GetActiveDrone</a> ()</td></tr>
 <tr class="memdesc:a6d474c17adda836c8f5476bf141e5c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwróć wskaźnik na drona, który jest obecnie aktywny.  <a href="class_scene.html#a6d474c17adda836c8f5476bf141e5c67">Więcej...</a><br /></td></tr>
 <tr class="separator:a6d474c17adda836c8f5476bf141e5c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7f9dc9a3c94e3d2ad746fc315b5eea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_drone.html">Drone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5b7f9dc9a3c94e3d2ad746fc315b5eea">GetDrone</a> (int index)</td></tr>
+<tr class="memdesc:a5b7f9dc9a3c94e3d2ad746fc315b5eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwróć drona o podanym indeksie.  <a href="class_scene.html#a5b7f9dc9a3c94e3d2ad746fc315b5eea">Więcej...</a><br /></td></tr>
+<tr class="separator:a5b7f9dc9a3c94e3d2ad746fc315b5eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7cc995632a1927e194c68badfbda359"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa7cc995632a1927e194c68badfbda359">ChooseActiveDrone</a> (unsigned int choice)</td></tr>
 <tr class="memdesc:aa7cc995632a1927e194c68badfbda359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wybierz aktywnego drona, podając jego numer (zaczynając od 1)  <a href="class_scene.html#aa7cc995632a1927e194c68badfbda359">Więcej...</a><br /></td></tr>
 <tr class="separator:aa7cc995632a1927e194c68badfbda359"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +142,9 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
 <tr class="memitem:a3b0ad5608addd2eaf22569e2015f5374 inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a3b0ad5608addd2eaf22569e2015f5374">PlanPath</a> (double angle, double distance, std::vector&lt; <a class="el" href="vector3_d_8hh.html#afe9a79695fd6c7e892c27528d3ca948d">Vector3D</a> &gt; &amp;PathPoints)</td></tr>
 <tr class="memdesc:a3b0ad5608addd2eaf22569e2015f5374 inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zaplanuj ścieżkę przelotu drona.  <a href="class_drone.html#a3b0ad5608addd2eaf22569e2015f5374">Więcej...</a><br /></td></tr>
 <tr class="separator:a3b0ad5608addd2eaf22569e2015f5374 inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6c138c26b5f3e8a4264b6357158dbd inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#abf6c138c26b5f3e8a4264b6357158dbd">SpinRotors</a> (double degrees)</td></tr>
+<tr class="memdesc:abf6c138c26b5f3e8a4264b6357158dbd inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obróć każdy z rotorów o pewien kąt w odpowiednim kierunku.  <a href="class_drone.html#abf6c138c26b5f3e8a4264b6357158dbd">Więcej...</a><br /></td></tr>
+<tr class="separator:abf6c138c26b5f3e8a4264b6357158dbd inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00f69f01bbcde98b37aafd0eb5ff126f inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a00f69f01bbcde98b37aafd0eb5ff126f">VerticalFlight</a> (double distance, <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;Lacze)</td></tr>
 <tr class="memdesc:a00f69f01bbcde98b37aafd0eb5ff126f inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wykonaj pioniowy lot drona na pewną odległość  <a href="class_drone.html#a00f69f01bbcde98b37aafd0eb5ff126f">Więcej...</a><br /></td></tr>
 <tr class="separator:a00f69f01bbcde98b37aafd0eb5ff126f inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +154,9 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
 <tr class="memitem:a4c0904848783c4c2a5918834851c1e66 inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a4c0904848783c4c2a5918834851c1e66">HorizontalFlight</a> (double distance, <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;Lacze)</td></tr>
 <tr class="memdesc:a4c0904848783c4c2a5918834851c1e66 inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wykonaj poziomy lot drona na pewną odległość  <a href="class_drone.html#a4c0904848783c4c2a5918834851c1e66">Więcej...</a><br /></td></tr>
 <tr class="separator:a4c0904848783c4c2a5918834851c1e66 inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199a50ea0de3835d057e1e72dd0c23db inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a199a50ea0de3835d057e1e72dd0c23db">GoAround</a> (double radius, <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;Lacze)</td></tr>
+<tr class="memdesc:a199a50ea0de3835d057e1e72dd0c23db inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wzleć do góry, poleć do przodu o pewną odległość, wykonaj lot po okręgu względem punktu do którego dron się początkowo wzniósł, wróć na poprzednie miejsce.  <a href="class_drone.html#a199a50ea0de3835d057e1e72dd0c23db">Więcej...</a><br /></td></tr>
+<tr class="separator:a199a50ea0de3835d057e1e72dd0c23db inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad681f67940125d81ed33c1c0bf352078 inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ad681f67940125d81ed33c1c0bf352078">CalcDroneGlobalCoords</a> () const</td></tr>
 <tr class="memdesc:ad681f67940125d81ed33c1c0bf352078 inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicz współrzędne globalne drona.  <a href="class_drone.html#ad681f67940125d81ed33c1c0bf352078">Więcej...</a><br /></td></tr>
 <tr class="separator:ad681f67940125d81ed33c1c0bf352078 inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,9 +166,9 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
 <tr class="memitem:a253877d4597440f429beb275d5f21e59 inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a253877d4597440f429beb275d5f21e59">Initiate</a> (const std::string filenames[2], double pos_x, double pos_y, double pos_z, double angle)</td></tr>
 <tr class="memdesc:a253877d4597440f429beb275d5f21e59 inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzenie drona według brył wzorcowych jego elementów, współrzędnych położenia i kątu obrotu.  <a href="class_drone.html#a253877d4597440f429beb275d5f21e59">Więcej...</a><br /></td></tr>
 <tr class="separator:a253877d4597440f429beb275d5f21e59 inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17bc7e16d33763103f4a4b9ce749aa17 inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a17bc7e16d33763103f4a4b9ce749aa17">PrintPosition</a> ()</td></tr>
-<tr class="memdesc:a17bc7e16d33763103f4a4b9ce749aa17 inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetl pozycję drona w globalnym układzie współrzędnych.  <a href="class_drone.html#a17bc7e16d33763103f4a4b9ce749aa17">Więcej...</a><br /></td></tr>
-<tr class="separator:a17bc7e16d33763103f4a4b9ce749aa17 inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0436bdd027e900a2f81dc56eab8491 inherit pub_methods_class_drone"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector3_d_8hh.html#afe9a79695fd6c7e892c27528d3ca948d">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#aad0436bdd027e900a2f81dc56eab8491">ReturnPosition</a> ()</td></tr>
+<tr class="memdesc:aad0436bdd027e900a2f81dc56eab8491 inherit pub_methods_class_drone"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetl pozycję drona w globalnym układzie współrzędnych.  <a href="class_drone.html#aad0436bdd027e900a2f81dc56eab8491">Więcej...</a><br /></td></tr>
+<tr class="separator:aad0436bdd027e900a2f81dc56eab8491 inherit pub_methods_class_drone"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock">
@@ -222,7 +231,7 @@ Oto graf wywoływań tej funkcji:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="scene_8hh_source.html#l00044">44</a> pliku <a class="el" href="scene_8hh_source.html">scene.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="scene_8hh_source.html#l00049">49</a> pliku <a class="el" href="scene_8hh_source.html">scene.hh</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
@@ -263,6 +272,39 @@ Oto graf wywoływań tej funkcji:</div>
 
 </div>
 </div>
+<a id="a5b7f9dc9a3c94e3d2ad746fc315b5eea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7f9dc9a3c94e3d2ad746fc315b5eea">&#9670;&nbsp;</a></span>GetDrone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_drone.html">Drone</a> Scene::GetDrone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="scene_8hh_source.html#l00044">44</a> pliku <a class="el" href="scene_8hh_source.html">scene.hh</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a5b7f9dc9a3c94e3d2ad746fc315b5eea_icgraph.png" border="0" usemap="#class_scene_a5b7f9dc9a3c94e3d2ad746fc315b5eea_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="a3acdf17a94a150598458a511c0644e81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3acdf17a94a150598458a511c0644e81">&#9670;&nbsp;</a></span>ReturnAtiveDroneNum()</h2>
 
@@ -286,7 +328,7 @@ Oto graf wywoływań tej funkcji:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="scene_8hh_source.html#l00049">49</a> pliku <a class="el" href="scene_8hh_source.html">scene.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="scene_8hh_source.html#l00054">54</a> pliku <a class="el" href="scene_8hh_source.html">scene.hh</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">

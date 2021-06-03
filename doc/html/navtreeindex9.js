@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"structdoctest_1_1detail_1_1underlying__type.html#a12878c6a50f59c38be0966dc83d242aa":[5,0,0,0,29,0],
+"structdoctest_1_1detail_1_1underlying__type.html#a12878c6a50f59c38be0966dc83d242aa":[5,0,0,0,29,1],
 "structdoctest_1_1mpi__sub__comm.html":[5,0,0,9],
 "structdoctest_1_1mpi__sub__comm.html#a2e26a3457f8b0f0184efad8c57d34045":[5,0,0,9,5],
 "structdoctest_1_1mpi__sub__comm.html#a336b0077bb17427b3df8c04a2e8ad6e6":[5,0,0,9,6],

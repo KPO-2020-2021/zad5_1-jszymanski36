@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basic_5fostream_1052',['basic_ostream',['../classbasic__ostream.html',1,'']]]
+  ['basic_5fostream_1055',['basic_ostream',['../classbasic__ostream.html',1,'']]]
 ];
