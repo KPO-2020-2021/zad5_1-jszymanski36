@@ -15,5 +15,5 @@ digraph "matrix3x3.hh"
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix3x3_8cpp.html",tooltip="Metody zdefiniowane dla Macierzy3x3."];
   Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="test_matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__matrix3x3_8cpp.html",tooltip=" "];
+  Node7 [label="test_matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__matrix3x3_8cpp.html",tooltip="Plik zawiera testy dotyczące wektorów 3D."];
 }

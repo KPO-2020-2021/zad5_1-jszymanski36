@@ -1,5 +1,6 @@
 var test__matrix3x3_8cpp =
 [
+    [ "DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN", "test__matrix3x3_8cpp.html#a623b8690a262536536a43eab2d7df03d", null ],
     [ "TEST_CASE", "test__matrix3x3_8cpp.html#a1d2c6b6953c218e8b6e84eb4f4d9cf16", null ],
     [ "TEST_CASE", "test__matrix3x3_8cpp.html#a0432a9dd67e570428d652104daee6bb0", null ],
     [ "TEST_CASE", "test__matrix3x3_8cpp.html#a9f86ce350c091166e50a46c5b33b679c", null ],

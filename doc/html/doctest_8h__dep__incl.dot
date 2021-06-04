@@ -13,7 +13,7 @@ digraph "doctest.h"
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="test_hexprism.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__hexprism_8cpp.html",tooltip="Plik zawiera testy dotyczące klasy HexPrism."];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="test_matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__matrix3x3_8cpp.html",tooltip=" "];
+  Node6 [label="test_matrix3x3.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__matrix3x3_8cpp.html",tooltip="Plik zawiera testy dotyczące wektorów 3D."];
   Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="test_vector3D.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__vector3_d_8cpp.html",tooltip="Plik zawiera testy dotyczące wektorów 3D."];
 }
