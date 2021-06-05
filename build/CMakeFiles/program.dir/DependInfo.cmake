@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jakub/Documents/zad5_1-jszymanski36/src/hexprism.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/hexprism.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/lacze_do_gnuplota.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/matrix3x3.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/matrix3x3.cpp.o"
-  "/home/jakub/Documents/zad5_1-jszymanski36/src/solid.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/solid.cpp.o"
   "/home/jakub/Documents/zad5_1-jszymanski36/src/vector3D.cpp" "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/vector3D.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

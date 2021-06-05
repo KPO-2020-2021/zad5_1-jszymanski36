@@ -122,22 +122,9 @@ CMakeFiles/program.dir/src/matrix3x3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/matrix3x3.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/Documents/zad5_1-jszymanski36/src/matrix3x3.cpp -o CMakeFiles/program.dir/src/matrix3x3.cpp.s
 
-CMakeFiles/program.dir/src/solid.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/solid.cpp.o: ../src/solid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/program.dir/src/solid.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/solid.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/solid.cpp
-
-CMakeFiles/program.dir/src/solid.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/solid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jakub/Documents/zad5_1-jszymanski36/src/solid.cpp > CMakeFiles/program.dir/src/solid.cpp.i
-
-CMakeFiles/program.dir/src/solid.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/solid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/Documents/zad5_1-jszymanski36/src/solid.cpp -o CMakeFiles/program.dir/src/solid.cpp.s
-
 CMakeFiles/program.dir/src/vector3D.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/vector3D.cpp.o: ../src/vector3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/program.dir/src/vector3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/program.dir/src/vector3D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/vector3D.cpp.o -c /home/jakub/Documents/zad5_1-jszymanski36/src/vector3D.cpp
 
 CMakeFiles/program.dir/src/vector3D.cpp.i: cmake_force
@@ -153,7 +140,6 @@ program: CMakeFiles/program.dir/src/cuboid.cpp.o
 program: CMakeFiles/program.dir/src/drone.cpp.o
 program: CMakeFiles/program.dir/src/hexprism.cpp.o
 program: CMakeFiles/program.dir/src/matrix3x3.cpp.o
-program: CMakeFiles/program.dir/src/solid.cpp.o
 program: CMakeFiles/program.dir/src/vector3D.cpp.o
 program: CMakeFiles/program.dir/build.make
 

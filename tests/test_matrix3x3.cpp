@@ -3,7 +3,6 @@
 * \brief Plik zawiera testy dotyczące wektorów 3D
 */
 
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../tests/doctest/doctest.h"
 #include "../inc/matrix3x3.hh"
 #include <iostream>

@@ -123,7 +123,6 @@ unit_tests_EXTERNAL_OBJECTS = \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/drone.cpp.o" \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/hexprism.cpp.o" \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/matrix3x3.cpp.o" \
-"/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/solid.cpp.o" \
 "/home/jakub/Documents/zad5_1-jszymanski36/build/CMakeFiles/program.dir/src/vector3D.cpp.o"
 
 unit_tests: tests/CMakeFiles/unit_tests.dir/test_matrix3x3.cpp.o
@@ -135,7 +134,6 @@ unit_tests: CMakeFiles/program.dir/src/cuboid.cpp.o
 unit_tests: CMakeFiles/program.dir/src/drone.cpp.o
 unit_tests: CMakeFiles/program.dir/src/hexprism.cpp.o
 unit_tests: CMakeFiles/program.dir/src/matrix3x3.cpp.o
-unit_tests: CMakeFiles/program.dir/src/solid.cpp.o
 unit_tests: CMakeFiles/program.dir/src/vector3D.cpp.o
 unit_tests: tests/CMakeFiles/unit_tests.dir/build.make
 unit_tests: tests/CMakeFiles/unit_tests.dir/link.txt

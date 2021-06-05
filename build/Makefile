@@ -725,33 +725,6 @@ src/matrix3x3.cpp.s:
 	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/matrix3x3.cpp.s
 .PHONY : src/matrix3x3.cpp.s
 
-src/solid.o: src/solid.cpp.o
-
-.PHONY : src/solid.o
-
-# target to build an object file
-src/solid.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/solid.cpp.o
-.PHONY : src/solid.cpp.o
-
-src/solid.i: src/solid.cpp.i
-
-.PHONY : src/solid.i
-
-# target to preprocess a source file
-src/solid.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/solid.cpp.i
-.PHONY : src/solid.cpp.i
-
-src/solid.s: src/solid.cpp.s
-
-.PHONY : src/solid.s
-
-# target to generate assembly for a file
-src/solid.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/solid.cpp.s
-.PHONY : src/solid.cpp.s
-
 src/vector3D.o: src/vector3D.cpp.o
 
 .PHONY : src/vector3D.o
@@ -840,9 +813,6 @@ help:
 	@echo "... src/matrix3x3.o"
 	@echo "... src/matrix3x3.i"
 	@echo "... src/matrix3x3.s"
-	@echo "... src/solid.o"
-	@echo "... src/solid.i"
-	@echo "... src/solid.s"
 	@echo "... src/vector3D.o"
 	@echo "... src/vector3D.i"
 	@echo "... src/vector3D.s"

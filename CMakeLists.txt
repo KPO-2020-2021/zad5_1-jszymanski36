@@ -43,7 +43,6 @@ set(SOURCES          # All .cpp files in src/
     src/drone.cpp
     src/hexprism.cpp
     src/matrix3x3.cpp
-    src/solid.cpp
     src/vector3D.cpp
 )
 set(TESTFILES        # All .cpp files in tests/

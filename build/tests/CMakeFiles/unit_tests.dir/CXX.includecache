@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/jakub/Documents/zad5_1-jszymanski36/inc/cuboid.hh
-solid.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/solid.hh
-
-/home/jakub/Documents/zad5_1-jszymanski36/inc/hexprism.hh
-cuboid.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/cuboid.hh
-
 /home/jakub/Documents/zad5_1-jszymanski36/inc/matrix.hh
 vector.hh
 /home/jakub/Documents/zad5_1-jszymanski36/inc/vector.hh
@@ -29,14 +21,6 @@ vector3D.hh
 /home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
 
 /home/jakub/Documents/zad5_1-jszymanski36/inc/size.hh
-
-/home/jakub/Documents/zad5_1-jszymanski36/inc/solid.hh
-vector3D.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
-stdio.h
--
-string
--
 
 /home/jakub/Documents/zad5_1-jszymanski36/inc/vector.hh
 size.hh
@@ -134,35 +118,11 @@ sys/time.h
 unistd.h
 -
 
-/home/jakub/Documents/zad5_1-jszymanski36/tests/test_cuboid.cpp
-../tests/doctest/doctest.h
-/home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
-../inc/cuboid.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/cuboid.hh
-
-/home/jakub/Documents/zad5_1-jszymanski36/tests/test_hexprism.cpp
-../tests/doctest/doctest.h
-/home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
-../inc/hexprism.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/hexprism.hh
-
 /home/jakub/Documents/zad5_1-jszymanski36/tests/test_matrix3x3.cpp
 ../tests/doctest/doctest.h
 /home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
 ../inc/matrix3x3.hh
 /home/jakub/Documents/zad5_1-jszymanski36/inc/matrix3x3.hh
-iostream
--
-sstream
--
-string
--
-
-/home/jakub/Documents/zad5_1-jszymanski36/tests/test_vector3D.cpp
-../tests/doctest/doctest.h
-/home/jakub/Documents/zad5_1-jszymanski36/tests/doctest/doctest.h
-../inc/vector3D.hh
-/home/jakub/Documents/zad5_1-jszymanski36/inc/vector3D.hh
 iostream
 -
 sstream

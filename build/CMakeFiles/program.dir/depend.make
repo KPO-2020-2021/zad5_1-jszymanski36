@@ -42,13 +42,6 @@ CMakeFiles/program.dir/src/matrix3x3.cpp.o: ../inc/vector.hh
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: ../inc/vector3D.hh
 CMakeFiles/program.dir/src/matrix3x3.cpp.o: ../src/matrix3x3.cpp
 
-CMakeFiles/program.dir/src/solid.cpp.o: ../inc/matrix.hh
-CMakeFiles/program.dir/src/solid.cpp.o: ../inc/size.hh
-CMakeFiles/program.dir/src/solid.cpp.o: ../inc/solid.hh
-CMakeFiles/program.dir/src/solid.cpp.o: ../inc/vector.hh
-CMakeFiles/program.dir/src/solid.cpp.o: ../inc/vector3D.hh
-CMakeFiles/program.dir/src/solid.cpp.o: ../src/solid.cpp
-
 CMakeFiles/program.dir/src/vector3D.cpp.o: ../inc/matrix.hh
 CMakeFiles/program.dir/src/vector3D.cpp.o: ../inc/size.hh
 CMakeFiles/program.dir/src/vector3D.cpp.o: ../inc/vector.hh
